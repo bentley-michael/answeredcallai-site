@@ -265,6 +265,23 @@
     letter-spacing: 0.01em;
   }
 
+  .cta-phone-number {
+    margin: 8px 0 2px;
+    font-family: 'DM Mono', monospace;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+
+  .cta-phone-number a {
+    color: var(--green-light);
+    text-decoration: none;
+  }
+
+  .cta-phone-number a:hover {
+    color: var(--green-bright);
+  }
+
   .hero-trust {
     display: flex;
     align-items: center;
@@ -983,6 +1000,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
           Call the Demo Now
         </a>
+        <p class="cta-phone-number"><a href="tel:+19403734586">(940) 373-4586</a></p>
         <p class="cta-subtext">Takes 30 seconds. See exactly how it handles your calls.</p>
         <a href="https://buy.stripe.com/eVq7sKauSaXr9Ei1E37kc06" target="_blank" rel="noopener" class="btn-secondary">Already ready? Get set up today</a>
       </div>
@@ -1319,15 +1337,6 @@
     });
   });
 
-  // Ensure all mailto buttons work as fallback
-  document.querySelectorAll('.btn-pricing').forEach(function(el) {
-    el.addEventListener('click', function(e) {
-      var href = this.getAttribute('href');
-      if (href && href.startsWith('mailto:')) {
-        window.location.href = href;
-      }
-    });
-  });
 </script>
 </body>
 </html>
