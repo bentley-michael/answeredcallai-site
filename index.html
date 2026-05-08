@@ -957,6 +957,102 @@
     margin-bottom: 2rem;
   }
 
+  .lead-form-card {
+    background: #1a1a1a;
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: left;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.24);
+  }
+
+  .lead-form-copy {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+  }
+
+  .lead-form {
+    display: grid;
+    gap: 14px;
+  }
+
+  .lead-form-field {
+    display: grid;
+    gap: 6px;
+  }
+
+  .lead-form-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted-light);
+  }
+
+  .lead-form input {
+    width: 100%;
+    background: #111;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+
+  .lead-form input::placeholder {
+    color: var(--muted);
+  }
+
+  .lead-form input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  }
+
+  .lead-form-submit {
+    width: 100%;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.15s, opacity 0.15s;
+  }
+
+  .lead-form-submit:hover:not(:disabled) {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+  }
+
+  .lead-form-submit:disabled {
+    cursor: wait;
+    opacity: 0.8;
+    transform: none;
+  }
+
+  .lead-form-message {
+    min-height: 24px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .lead-form-message.is-success {
+    color: #86efac;
+  }
+
+  .lead-form-message.is-error {
+    color: #fca5a5;
+  }
+
   .demo-fields {
     display: flex;
     gap: 12px;
@@ -1051,7 +1147,7 @@
     </div>
     <span class="nav-brand-name">AnsweredCallAI</span>
   </a>
-  <a href="#demo" class="nav-cta">Call the Demo Now</a>
+  <a href="#demo-form-section" class="nav-cta">Call the Demo Now</a>
 </nav>
 
 <!-- HERO -->
@@ -1069,12 +1165,11 @@
         AnsweredCallAI answers every call, qualifies every lead, and delivers it straight to you — 24 hours a day.
       </p>
       <div class="hero-cta-group">
-        <a href="#demo" class="btn-primary cta-button">
+        <a href="#demo-form-section" class="btn-primary cta-button">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
           Call the Demo Now
         </a>
         <p class="cta-subtext">Takes 30 seconds. See exactly how it handles your calls.</p>
-        <a href="https://buy.stripe.com/eVq7sKauSaXr9Ei1E37kc06" target="_blank" rel="noopener" class="btn-secondary">Already ready? Get set up today</a>
       </div>
       <div class="hero-trust">
         <div class="trust-item">
@@ -1155,26 +1250,35 @@
   </div>
 </div>
 
+<section style="padding: 2.5rem 2rem 0;">
+  <div class="section-inner">
+    <blockquote style="max-width: 860px; margin: 0 auto; background: var(--dark); border: 1px solid var(--border-light); border-radius: 16px; padding: 2rem; text-align: center;">
+      <p style="font-size: 20px; color: var(--white); line-height: 1.7; margin-bottom: 1rem;">"A Knoxville crawlspace contractor captured 3 after-hours leads in his first week — two of which closed."</p>
+      <footer style="font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green-light);">— AnsweredCallAI Early Adopter, Tennessee</footer>
+    </blockquote>
+  </div>
+</section>
+
 <!-- EMAIL CAPTURE / DEMO NUMBER -->
-<section class="demo-capture-section" id="demo">
+<section class="demo-capture-section" id="demo-form-section">
   <div class="section-inner">
     <div class="demo-capture-card">
-      <p class="section-eyebrow" style="justify-content: center;">Try it yourself</p>
-      <h2 class="demo-capture-title">Hear exactly what your customers hear</h2>
-
-      <div id="demo-form-wrap">
-        <form id="demo-capture-form">
+      <p class="section-eyebrow" style="justify-content: center;">Try It Right Now — Call the Demo</p>
+      <h2 class="demo-capture-title">Try It Right Now — Call the Demo</h2>
+      <!-- FORM HERE -->
+      <div class="lead-form-card" id="demo">
+        <p class="lead-form-copy">Fill in your info, then call the number that appears. Act like a customer. Hear it for yourself.</p>
+        <form id="lead-capture-form" class="lead-form" novalidate>
           <div class="demo-fields">
-            <input type="text" id="demo-name" name="name" placeholder="Your name" required autocomplete="name">
-            <input type="email" id="demo-email" name="email" placeholder="Your email" required autocomplete="email">
+            <input type="text" id="lead-name" name="name" placeholder="Your name" required autocomplete="name">
+            <input type="tel" id="lead-phone" name="phone" placeholder="Your phone" required autocomplete="tel">
           </div>
-          <button type="submit" class="btn-demo-submit">Get the Demo Number</button>
+          <div class="demo-fields">
+            <input type="email" id="lead-email" name="email" placeholder="Your email" required autocomplete="email">
+          </div>
+          <button type="submit" class="btn-demo-submit" id="lead-form-submit">Get the Demo Number</button>
+          <p class="lead-form-message" id="lead-form-message" aria-live="polite"></p>
         </form>
-      </div>
-
-      <div id="demo-number-reveal" style="display: none;">
-        <p class="demo-instruction">Call now and pretend you need a home repair — hear exactly what your customers would hear.</p>
-        <a href="tel:+19125560216" class="demo-phone-number">+1 (912) 556-0216</a>
       </div>
     </div>
   </div>
@@ -1283,7 +1387,7 @@
         </div>
       </div>
       <div class="pricing-cta">
-        <a href="#demo" class="btn-pricing">
+        <a href="#demo-form-section" class="btn-pricing">
           Call the Demo Now
         </a>
         <p class="pricing-demo-note">
@@ -1434,22 +1538,54 @@
     });
   });
 
-  // Demo capture form
-  var demoCaptureForm = document.getElementById('demo-capture-form');
-  if (demoCaptureForm) {
-    demoCaptureForm.addEventListener('submit', function(e) {
+  // Lead capture form
+  var leadCaptureForm = document.getElementById('lead-capture-form');
+  if (leadCaptureForm) {
+    leadCaptureForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      var name = document.getElementById('demo-name').value.trim();
-      var email = document.getElementById('demo-email').value.trim();
 
-      fetch('https://mnbentley.app.n8n.cloud/webhook/aa75b1aa-565f-4889-b31c-63f3d644a00d', {
+      var submitButton = document.getElementById('lead-form-submit');
+      var message = document.getElementById('lead-form-message');
+      var name = document.getElementById('lead-name').value.trim();
+      var phone = document.getElementById('lead-phone').value.trim();
+      var email = document.getElementById('lead-email').value.trim();
+
+      if (!name || !phone || !email) {
+        message.textContent = 'Please fill out your name, phone number, and email.';
+        message.className = 'lead-form-message is-error';
+        return;
+      }
+
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending…';
+      message.textContent = '';
+      message.className = 'lead-form-message';
+
+      fetch('https://mnbentley.app.n8n.cloud/webhook/c3e2f227-3381-441a-8e1d-82f055d2aa25', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: name, email: email })
-      }).catch(function() {});
+        body: JSON.stringify({
+          name: name,
+          phone: phone,
+          email: email,
+          source: 'answeredcallai.com',
+          submittedAt: new Date().toISOString()
+        })
+      }).then(function(response) {
+        if (!response.ok) {
+          throw new Error('Request failed');
+        }
 
-      document.getElementById('demo-form-wrap').style.display = 'none';
-      document.getElementById('demo-number-reveal').style.display = 'block';
+        leadCaptureForm.reset();
+        message.textContent = 'Try: water in my crawlspace, foundation crack, wet basement smell';
+        message.className = 'lead-form-message is-success';
+      }).catch(function() {
+        message.textContent = 'Something went wrong. Please try again.';
+        message.className = 'lead-form-message is-error';
+      }).finally(function() {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Submit';
+      });
     });
   }
 
