@@ -1267,18 +1267,13 @@
       <h2 class="demo-capture-title">Try It Right Now — Call the Demo</h2>
       <!-- FORM HERE -->
       <div class="lead-form-card" id="demo">
-        <p class="lead-form-copy">Fill in your info, then call the number that appears. Act like a customer. Hear it for yourself.</p>
-        <form id="lead-capture-form" class="lead-form" novalidate>
-          <div class="demo-fields">
-            <input type="text" id="lead-name" name="name" placeholder="Your name" required autocomplete="name">
-            <input type="tel" id="lead-phone" name="phone" placeholder="Your phone" required autocomplete="tel">
-          </div>
-          <div class="demo-fields">
-            <input type="email" id="lead-email" name="email" placeholder="Your email" required autocomplete="email">
-          </div>
-          <button type="submit" class="btn-demo-submit" id="lead-form-submit">Get the Demo Number</button>
-          <p class="lead-form-message" id="lead-form-message" aria-live="polite"></p>
-        </form>
+        <p class="lead-form-copy">Call this number right now. Act like a homeowner with a wet crawlspace. Hear exactly what your customers will hear — 24/7, live.</p>
+        <div style="text-align:center; padding: 1.5rem 0 1rem;">
+          <a href="tel:+19125560216" class="demo-phone-number">+1 (912) 556-0216</a>
+        </div>
+        <p style="text-align:center; font-size:13px; color:var(--muted); margin-top:0.5rem;">
+          Try: "I've got water coming into my crawlspace" · "I smell mold under my house"
+        </p>
       </div>
     </div>
   </div>
@@ -1537,57 +1532,6 @@
       });
     });
   });
-
-  // Lead capture form
-  var leadCaptureForm = document.getElementById('lead-capture-form');
-  if (leadCaptureForm) {
-    leadCaptureForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      var submitButton = document.getElementById('lead-form-submit');
-      var message = document.getElementById('lead-form-message');
-      var name = document.getElementById('lead-name').value.trim();
-      var phone = document.getElementById('lead-phone').value.trim();
-      var email = document.getElementById('lead-email').value.trim();
-
-      if (!name || !phone || !email) {
-        message.textContent = 'Please fill out your name, phone number, and email.';
-        message.className = 'lead-form-message is-error';
-        return;
-      }
-
-      submitButton.disabled = true;
-      submitButton.textContent = 'Sending…';
-      message.textContent = '';
-      message.className = 'lead-form-message';
-
-      fetch('https://mnbentley.app.n8n.cloud/webhook/c3e2f227-3381-441a-8e1d-82f055d2aa25', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: name,
-          phone: phone,
-          email: email,
-          source: 'answeredcallai.com',
-          submittedAt: new Date().toISOString()
-        })
-      }).then(function(response) {
-        if (!response.ok) {
-          throw new Error('Request failed');
-        }
-
-        leadCaptureForm.reset();
-        message.textContent = 'Try: water in my crawlspace, foundation crack, wet basement smell';
-        message.className = 'lead-form-message is-success';
-      }).catch(function() {
-        message.textContent = 'Something went wrong. Please try again.';
-        message.className = 'lead-form-message is-error';
-      }).finally(function() {
-        submitButton.disabled = false;
-        submitButton.textContent = 'Submit';
-      });
-    });
-  }
 
   // Ensure all mailto buttons work as fallback
   document.querySelectorAll('.btn-pricing').forEach(function(el) {
