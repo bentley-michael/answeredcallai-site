@@ -1133,6 +1133,114 @@
   .hero-cta-group { animation: fadeUp 0.5s ease 0.3s both; }
   .hero-trust { animation: fadeUp 0.5s ease 0.4s both; }
   .hero-card { animation: fadeUp 0.5s ease 0.2s both; }
+
+  .tl-section {
+    background: var(--surface, #111);
+    border-top: 1px solid rgba(255,255,255,0.07);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    padding: 80px 24px;
+  }
+
+  .tl-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .tl-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--amber, #f59e0b);
+    margin-bottom: 1rem;
+  }
+
+  .tl-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1;
+    color: var(--white);
+    margin-bottom: 2.25rem;
+  }
+
+  .tl-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
+  .tl-column-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--amber, #f59e0b);
+    margin-bottom: 1rem;
+  }
+
+  .tl-list {
+    list-style: none;
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .tl-list li {
+    position: relative;
+    padding-left: 1.1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+
+  .tl-list li::before {
+    content: '\2014';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--amber, #f59e0b);
+  }
+
+  .tl-fit-box {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    background: rgba(255,255,255,0.02);
+  }
+
+  .tl-fit-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .tl-fit-label-best {
+    color: var(--amber, #f59e0b);
+  }
+
+  .tl-fit-label-not {
+    color: #555;
+  }
+
+  .tl-list-x li::before {
+    content: '\2715';
+    color: #555;
+    font-size: 12px;
+    top: 0.1rem;
+  }
+
+  @media (max-width: 640px) {
+    .tl-grid,
+    .tl-fit-box {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
 </head>
 <body>
@@ -1418,6 +1526,56 @@
       <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.75rem;">Email: <a href="#" class="copy-email" data-email="mnbentley@outlook.com" style="color: var(--green-light); text-decoration: none;">mnbentley@outlook.com</a><span class="copy-toast">copied</span></p>
       <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">Serving crawlspace encapsulation contractors across Tennessee and beyond.</p>
     </article>
+  </div>
+</section>
+
+<section class="tl-section" aria-labelledby="truth-layer-title">
+  <div class="tl-inner">
+    <p class="tl-eyebrow">What You're Actually Getting</p>
+    <h2 class="tl-title" id="truth-layer-title">Built for contractors who lose jobs from missed calls</h2>
+
+    <div class="tl-grid">
+      <div>
+        <p class="tl-column-label">What it does</p>
+        <ul class="tl-list">
+          <li>AI phone intake for crawlspace, foundation, plumbing, HVAC, roofing, water damage, septic, sewer backup, drain cleaning, garage door repair, and other urgent-service contractors.</li>
+          <li>Answers missed and after-hours calls — no voicemail, no dead ends</li>
+          <li>Captures homeowner name, phone, address, job type, urgency, and a full call summary</li>
+          <li>Delivers lead details instantly by SMS, email, or Google Sheets</li>
+          <li>Flags emergency and high-priority calls so you know what to call back first</li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="tl-column-label">Pricing &amp; terms</p>
+        <ul class="tl-list">
+          <li>$297 setup + $297/mo — or $497/mo flat (no setup fee)</li>
+          <li>No long-term contract — cancel anytime</li>
+          <li>30-day money-back guarantee</li>
+          <li>Demo available by phone — call or text to hear it live</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tl-fit-box">
+      <div>
+        <p class="tl-fit-label tl-fit-label-best">Best fit</p>
+        <ul class="tl-list">
+          <li>Contractors who miss calls while on the job</li>
+          <li>Businesses that run emergency or urgent service calls</li>
+          <li>Owners who want leads texted the moment they come in</li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="tl-fit-label tl-fit-label-not">Not best fit</p>
+        <ul class="tl-list tl-list-x">
+          <li>Businesses that already answer every call live 24/7</li>
+          <li>Companies that only want a generic chatbot</li>
+          <li>Businesses that won't follow up with leads quickly</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 </main>
