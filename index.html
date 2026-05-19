@@ -1121,6 +1121,34 @@
     .demo-fields { flex-direction: column; }
   }
 
+  .sms-consent {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .sms-consent input[type="checkbox"] {
+    margin-top: 3px;
+    flex-shrink: 0;
+    accent-color: var(--green);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+
+  .sms-disclosure {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+    border-top: 1px solid var(--border);
+    padding-top: 10px;
+    margin-top: 4px;
+  }
+
   /* ANIMATIONS */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
@@ -1383,6 +1411,30 @@
           Try: "I've got water coming into my crawlspace" · "I smell mold under my house"
         </p>
       </div>
+      <div class="lead-form-card" style="margin-top: 1.5rem;">
+        <p class="lead-form-copy">Prefer a callback? Leave your details and we'll reach out to walk you through the setup.</p>
+        <form class="lead-form" id="lead-form" novalidate>
+          <div class="lead-form-field">
+            <label class="lead-form-label" for="lf-name">Your Name</label>
+            <input type="text" id="lf-name" name="name" placeholder="John Smith" required>
+          </div>
+          <div class="lead-form-field">
+            <label class="lead-form-label" for="lf-phone">Phone Number</label>
+            <input type="tel" id="lf-phone" name="phone" placeholder="(555) 123-4567" required>
+          </div>
+          <div class="lead-form-field">
+            <label class="lead-form-label" for="lf-email">Business Email</label>
+            <input type="email" id="lf-email" name="email" placeholder="you@yourbusiness.com" required>
+          </div>
+          <label class="sms-consent">
+            <input type="checkbox" name="sms_consent" required>
+            I agree to receive SMS/text messages from AnsweredCallAI about my demo request, missed-call alerts, setup updates, and service-related follow-ups. Message and data rates may apply. Message frequency may vary. Reply STOP to opt out or HELP for help.
+          </label>
+          <button type="submit" class="btn-demo-submit">Request Demo Info</button>
+          <p class="sms-disclosure">By submitting this form, you agree to receive calls, emails, and SMS/text messages from AnsweredCallAI related to your inquiry. Consent is not a condition of purchase. Reply STOP to unsubscribe from SMS messages.</p>
+          <p class="lead-form-message" id="lead-form-message" aria-live="polite"></p>
+        </form>
+      </div>
     </div>
   </div>
 </section>
@@ -1523,7 +1575,11 @@
     </article>
     <article id="contact">
       <p style="font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem;">Contact</p>
-      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.75rem;">Email: <a href="#" class="copy-email" data-email="sales@answeredcallai.com" style="color: var(--green-light); text-decoration: none;">sales@answeredcallai.com</a><span class="copy-toast">copied</span></p>
+      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.5rem;"><strong style="color: var(--text);">AnsweredCallAI</strong></p>
+      <p style="font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 0.75rem;">AI phone intake and missed-call response system for contractors</p>
+      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.5rem;">Sales: <a href="#" class="copy-email" data-email="sales@answeredcallai.com" style="color: var(--green-light); text-decoration: none;">sales@answeredcallai.com</a><span class="copy-toast">copied</span></p>
+      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.5rem;">Business: <a href="mailto:contact@answeredcallai.com" style="color: var(--green-light); text-decoration: none;">contact@answeredcallai.com</a></p>
+      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.75rem;">Website: <a href="https://answeredcallai.com" style="color: var(--green-light); text-decoration: none;">answeredcallai.com</a></p>
       <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">Serving urgent-service contractors across Tennessee and beyond.</p>
     </article>
   </div>
@@ -1608,6 +1664,9 @@
           <a href="#" class="footer-contact-email copy-email" data-email="sales@answeredcallai.com">sales@answeredcallai.com</a>
           <span class="copy-toast">copied</span>
         </div>
+        <div class="footer-contact-row" style="margin-top: 0.4rem;">
+          <a href="mailto:contact@answeredcallai.com" class="footer-contact-email">contact@answeredcallai.com</a>
+        </div>
         <p class="footer-contact-service">Serving urgent-service contractors across Tennessee and beyond.</p>
       </div>
     </div>
@@ -1690,6 +1749,82 @@
       });
     });
   });
+
+  // Lead form — SMS consent required before submission
+  var leadForm = document.getElementById('lead-form');
+  if (leadForm) {
+    leadForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var form = this;
+      var btn = form.querySelector('.btn-demo-submit');
+      var msg = document.getElementById('lead-form-message');
+      var consent = form.querySelector('[name="sms_consent"]');
+
+      if (!consent.checked) {
+        msg.textContent = 'Please check the SMS consent box to continue.';
+        msg.className = 'lead-form-message is-error';
+        consent.focus();
+        return;
+      }
+
+      if (!form.querySelector('[name="name"]').value.trim() ||
+          !form.querySelector('[name="phone"]').value.trim() ||
+          !form.querySelector('[name="email"]').value.trim()) {
+        msg.textContent = 'Please fill in all fields.';
+        msg.className = 'lead-form-message is-error';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+
+      var payload = {
+        name: form.querySelector('[name="name"]').value.trim(),
+        phone: form.querySelector('[name="phone"]').value.trim(),
+        email: form.querySelector('[name="email"]').value.trim(),
+        sms_consent: true,
+        sms_consent_text: 'I agree to receive SMS/text messages from AnsweredCallAI about my demo request, missed-call alerts, setup updates, and service-related follow-ups. Message and data rates may apply. Message frequency may vary. Reply STOP to opt out or HELP for help.'
+      };
+
+      // Set WEBHOOK_URL to your n8n endpoint to enable live submission
+      var WEBHOOK_URL = '';
+
+      function onSuccess() {
+        msg.textContent = 'Got it—we’ll reach out shortly.';
+        msg.className = 'lead-form-message is-success';
+        form.reset();
+        btn.disabled = false;
+        btn.textContent = 'Request Demo Info';
+      }
+
+      function onError() {
+        msg.textContent = 'Something went wrong. Email us at contact@answeredcallai.com.';
+        msg.className = 'lead-form-message is-error';
+        btn.disabled = false;
+        btn.textContent = 'Request Demo Info';
+      }
+
+      if (WEBHOOK_URL) {
+        fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).then(function(r) {
+          if (r.ok) { onSuccess(); } else { onError(); }
+        }).catch(onError);
+      } else {
+        window.location.href = 'mailto:contact@answeredcallai.com'
+          + '?subject=' + encodeURIComponent('Demo Request — ' + payload.name)
+          + '&body=' + encodeURIComponent(
+              'Name: ' + payload.name + '\n'
+            + 'Phone: ' + payload.phone + '\n'
+            + 'Email: ' + payload.email + '\n'
+            + 'SMS Consent: Yes'
+            );
+        onSuccess();
+      }
+    });
+  }
 
   // Ensure all mailto buttons work as fallback
   document.querySelectorAll('.btn-pricing').forEach(function(el) {
