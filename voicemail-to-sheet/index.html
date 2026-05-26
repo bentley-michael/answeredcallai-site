@@ -147,6 +147,10 @@
   .btn-pricing-secondary { display: block; background: transparent; color: var(--green-light); text-decoration: none; font-size: 15px; font-weight: 500; padding: 13px; border-radius: 8px; text-align: center; border: 1px solid rgba(22,163,74,0.28); transition: all 0.15s; }
   .btn-pricing-secondary:hover { border-color: var(--green-light); background: rgba(22,163,74,0.05); }
 
+  /* EXAMPLE */
+  .example-section { background: var(--off-black); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .example-img { width: 100%; border-radius: 10px; border: 1px solid var(--border-light); display: block; margin-top: 2rem; }
+
   /* CTA */
   .cta-section { text-align: center; }
   .cta-inner { max-width: 560px; margin: 0 auto; }
@@ -191,10 +195,7 @@
     <p class="hero-sub">
       When a homeowner leaves a voicemail, that job shouldn't sit in your inbox unread. <strong>AnsweredCall pulls the caller name, phone, address, service needed, urgency, and full transcript out of the voicemail</strong> and writes a clean row straight to Google Sheets — no manual entry, no missed context.
     </p>
-    <a href="mailto:sales@answeredcallai.com?subject=Voicemail-to-Sheet%20Demo&body=Hi%20AnsweredCall%2C%0A%0AI%27m%20interested%20in%20the%20Voicemail-to-Sheet%20setup.%20Here%27s%20a%20sample%20voicemail%20or%20typical%20missed-call%20scenario%3A%0A%0A" class="btn-primary">
-      Send a Sample Voicemail
-    </a>
-    <p class="cta-note">Email us and we'll show you a live example with a real voicemail transcript.</p>
+    <a href="#example" class="btn-primary">See an Example →</a>
   </div>
 </div>
 
@@ -268,6 +269,15 @@
   </div>
 </section>
 
+<section class="example-section" id="example">
+  <div class="section-inner">
+    <p class="section-eyebrow">Example output</p>
+    <h2 class="section-title">Example voicemail output</h2>
+    <p class="section-sub">A homeowner leaves a voicemail. AnsweredCall turns it into a clean Google Sheet row automatically.</p>
+    <img src="../assets/voicemail-sheet-example.png" alt="Example Google Sheet row created from a contractor voicemail" class="example-img">
+  </div>
+</section>
+
 <section class="pricing-section" id="pricing">
   <div class="section-inner">
     <p class="section-eyebrow">Pricing</p>
@@ -297,21 +307,8 @@
       <div class="pricing-cta-block">
         <a href="https://buy.stripe.com/14AbJ01YmfdH17MciH7kc0a" class="btn-pricing-primary" target="_blank" rel="noopener">Get Setup — $197 + $97/mo</a>
         <p class="pricing-price-sub" style="text-align:center;margin-bottom:0;">Charged $294 today, then $97/mo. Cancel anytime.</p>
-        <a href="mailto:sales@answeredcallai.com?subject=Voicemail-to-Sheet%20Demo&body=Hi%20AnsweredCall%2C%0A%0AI%27m%20interested%20in%20the%20Voicemail-to-Sheet%20setup.%20Here%27s%20a%20sample%20voicemail%20or%20typical%20missed-call%20scenario%3A%0A%0A" class="btn-pricing-secondary">Send a Sample Voicemail</a>
+        <p class="cta-note" style="text-align:center;">Not sure if your voicemail system works? Email <a href="mailto:sales@answeredcallai.com" style="color:var(--green-light);">sales@answeredcallai.com</a> and we'll tell you what can connect.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="cta-section">
-  <div class="section-inner">
-    <div class="cta-inner">
-      <h2 class="cta-title">See it working on a real voicemail</h2>
-      <p class="cta-sub">Email us a sample voicemail transcript — or just describe your typical missed call — and we'll show you the exact row it would produce in Google Sheets.</p>
-      <a href="mailto:sales@answeredcallai.com?subject=Voicemail-to-Sheet%20Demo&body=Hi%20AnsweredCall%2C%0A%0AI%27m%20interested%20in%20the%20Voicemail-to-Sheet%20setup.%20Here%27s%20a%20sample%20voicemail%20or%20typical%20missed-call%20scenario%3A%0A%0A" class="btn-primary">
-        Send a Sample Voicemail
-      </a>
-      <p class="cta-note" style="margin-top: 16px;">sales@answeredcallai.com &nbsp;·&nbsp; No commitment required</p>
     </div>
   </div>
 </section>
