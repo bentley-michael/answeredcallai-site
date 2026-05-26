@@ -3,17 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AnsweredCallAI answers every call, qualifies every lead, and delivers opportunities instantly for crawlspace encapsulation contractors in Tennessee." />
+  <meta name="description" content="Turn contractor calls and voicemails into organized lead records. AnsweredCall captures every inbound homeowner inquiry and sends it straight to you." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="AnsweredCallAI | AI Phone Intake for Urgent-Service Contractors" />
-  <meta property="og:description" content="Every call answered. Every lead captured. Built for plumbing, HVAC, water damage, crawlspace, and foundation contractors who can't afford a missed call." />
-  <meta property="og:image" content="https://yourdomain.com/social-preview.png" />
-  <meta property="og:url" content="https://yourdomain.com" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AnsweredCallAI | AI Phone Intake for Crawlspace Contractors" />
-  <meta name="twitter:description" content="Every call answered. Every lead captured for crawlspace encapsulation contractors in Tennessee and beyond." />
-  <meta name="twitter:image" content="https://yourdomain.com/social-preview.png" />
-  <title>AnsweredCallAI | Every call answered. Every lead captured.</title>
+  <meta property="og:title" content="AnsweredCall | Contractor Call and Voicemail Lead Capture" />
+  <meta property="og:description" content="Phone Intake and Voicemail to Sheet — two tools for contractors who need clean lead follow-up." />
+  <meta property="og:url" content="https://answeredcallai.com" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="AnsweredCall | Contractor Call and Voicemail Lead Capture" />
+  <meta name="twitter:description" content="Turn contractor calls and voicemails into organized lead records automatically." />
+  <title>AnsweredCall | Contractor Call and Voicemail Lead Capture</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -234,28 +232,6 @@
     height: 16px;
   }
 
-  .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    color: var(--muted-light);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 400;
-    transition: color 0.15s;
-    padding: 4px 0;
-  }
-
-  .btn-secondary:hover { color: var(--text); }
-
-  .btn-secondary::after {
-    content: '→';
-    font-size: 14px;
-    transition: transform 0.15s;
-  }
-
-  .btn-secondary:hover::after { transform: translateX(3px); }
-
   .cta-subtext {
     font-size: 13px;
     color: var(--muted);
@@ -263,6 +239,26 @@
     font-family: 'DM Sans', sans-serif;
     font-weight: 400;
     letter-spacing: 0.01em;
+  }
+
+  .hero-demo-number {
+    display: inline-block;
+    margin-top: 0.35rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(38px, 6vw, 54px);
+    line-height: 1;
+    letter-spacing: 1.5px;
+    color: var(--amber);
+    text-decoration: none;
+  }
+
+  .hero-demo-number:hover { color: var(--amber-light); }
+
+  .hero-demo-note {
+    margin-top: 0.85rem;
+    font-size: 13px;
+    color: var(--muted-light);
+    max-width: 420px;
   }
 
   .hero-trust {
@@ -726,26 +722,6 @@
     text-decoration: underline;
   }
 
-  .copy-email-hint {
-    color: var(--muted-light);
-    font-size: 0.92em;
-  }
-
-  .copy-email {
-    cursor: pointer;
-  }
-
-  .copy-toast {
-    display: inline-block;
-    margin-left: 6px;
-    font-size: 11px;
-    color: var(--green-light);
-    opacity: 0;
-    transition: opacity 0.3s;
-    font-family: 'DM Mono', monospace;
-  }
-  .copy-toast.show { opacity: 1; }
-
   .pricing-guarantee {
     text-align: center;
     margin-top: 1.5rem;
@@ -756,19 +732,6 @@
     justify-content: center;
     gap: 6px;
   }
-
-  .pricing-secondary-cta {
-    display: block;
-    text-align: center;
-    margin-top: 14px;
-    font-size: 14px;
-    color: var(--amber);
-    text-decoration: none;
-    transition: color 0.15s;
-    font-weight: 500;
-  }
-
-  .pricing-secondary-cta:hover { color: var(--amber-light); }
 
   /* FOOTER */
   footer {
@@ -875,15 +838,7 @@
   .footer-contact-email:hover { text-decoration: underline; }
 
   .footer-contact-row {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0;
     margin-bottom: 8px;
-  }
-
-  .footer-contact-row .copy-toast {
-    margin-left: 8px;
   }
 
   .footer-contact-service {
@@ -933,6 +888,7 @@
     .stats-inner { grid-template-columns: 1fr; text-align: left; }
     .hero-trust { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
     .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+    .legal-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
   }
 
   /* DEMO CAPTURE */
@@ -974,128 +930,6 @@
     font-weight: 300;
   }
 
-  .lead-form {
-    display: grid;
-    gap: 14px;
-  }
-
-  .lead-form-field {
-    display: grid;
-    gap: 6px;
-  }
-
-  .lead-form-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--muted-light);
-  }
-
-  .lead-form input {
-    width: 100%;
-    background: #111;
-    border: 1px solid var(--border-light);
-    border-radius: 8px;
-    padding: 14px 16px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    color: var(--text);
-    outline: none;
-    transition: border-color 0.15s, box-shadow 0.15s;
-  }
-
-  .lead-form input::placeholder {
-    color: var(--muted);
-  }
-
-  .lead-form input:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-  }
-
-  .lead-form-submit {
-    width: 100%;
-    background: #2563eb;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 15px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.15s, transform 0.15s, opacity 0.15s;
-  }
-
-  .lead-form-submit:hover:not(:disabled) {
-    background: #1d4ed8;
-    transform: translateY(-1px);
-  }
-
-  .lead-form-submit:disabled {
-    cursor: wait;
-    opacity: 0.8;
-    transform: none;
-  }
-
-  .lead-form-message {
-    min-height: 24px;
-    font-size: 14px;
-    line-height: 1.5;
-  }
-
-  .lead-form-message.is-success {
-    color: #86efac;
-  }
-
-  .lead-form-message.is-error {
-    color: #fca5a5;
-  }
-
-  .demo-fields {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 12px;
-  }
-
-  .demo-fields input {
-    flex: 1;
-    background: var(--dark);
-    border: 1px solid var(--border-light);
-    border-radius: 8px;
-    padding: 13px 16px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    color: var(--text);
-    outline: none;
-    transition: border-color 0.15s;
-  }
-
-  .demo-fields input::placeholder { color: var(--muted); }
-
-  .demo-fields input:focus { border-color: var(--green); }
-
-  .btn-demo-submit {
-    width: 100%;
-    background: var(--green);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 15px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.15s;
-    letter-spacing: -0.2px;
-  }
-
-  .btn-demo-submit:hover {
-    background: var(--green-light);
-    transform: translateY(-1px);
-  }
-
   .demo-instruction {
     font-size: 15px;
     color: var(--text-secondary);
@@ -1117,36 +951,26 @@
 
   .demo-phone-number:hover { color: var(--amber-light); }
 
-  @media (max-width: 600px) {
-    .demo-fields { flex-direction: column; }
+  .demo-proof-list {
+    list-style: none;
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
   }
 
-  .sms-consent {
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-    cursor: pointer;
-    font-size: 13px;
+  .demo-proof-list li {
+    font-size: 14px;
     color: var(--text-secondary);
     line-height: 1.6;
+    padding-left: 1rem;
+    position: relative;
   }
 
-  .sms-consent input[type="checkbox"] {
-    margin-top: 3px;
-    flex-shrink: 0;
-    accent-color: var(--green);
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-  }
-
-  .sms-disclosure {
-    font-size: 12px;
-    color: var(--muted);
-    line-height: 1.6;
-    border-top: 1px solid var(--border);
-    padding-top: 10px;
-    margin-top: 4px;
+  .demo-proof-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--green-light);
   }
 
   /* ANIMATIONS */
@@ -1269,6 +1093,112 @@
       grid-template-columns: 1fr;
     }
   }
+
+  /* PRODUCT CHOOSER */
+  .chooser-section {
+    min-height: 78vh;
+    display: flex;
+    align-items: center;
+    padding: 5rem 2rem 4rem;
+  }
+
+  .chooser-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  .chooser-headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 1;
+    color: var(--white);
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+  }
+
+  .chooser-sub {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+  }
+
+  .chooser-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .chooser-card {
+    display: block;
+    text-decoration: none;
+    background: var(--dark);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    text-align: left;
+    transition: transform 0.15s, border-color 0.15s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .chooser-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--green);
+  }
+
+  .chooser-card-amber::before { background: var(--amber); }
+
+  .chooser-card:hover { transform: translateY(-2px); }
+
+  .chooser-card-tag {
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--green-light);
+    margin-bottom: 1rem;
+  }
+
+  .chooser-card-amber .chooser-card-tag { color: var(--amber); }
+
+  .chooser-card h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+    line-height: 1;
+    letter-spacing: 0.5px;
+  }
+
+  .chooser-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+  }
+
+  .chooser-arrow {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--green-light);
+  }
+
+  .chooser-card-amber .chooser-arrow { color: var(--amber); }
+
+  @media (max-width: 640px) {
+    .chooser-section { min-height: auto; padding: 3rem 1rem; }
+    .chooser-grid { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -1281,89 +1211,31 @@
     <div class="nav-logo">
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
     </div>
-    <span class="nav-brand-name">AnsweredCallAI</span>
+    <span class="nav-brand-name">AnsweredCall</span>
   </a>
   <a href="#demo-form-section" class="nav-cta">Call the Demo Now</a>
 </nav>
 
-<!-- HERO -->
-<main id="main">
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-content">
-      <p class="hero-eyebrow">AI Phone Intake for Contractors</p>
-      <h1 class="hero-headline">
-        Every Missed Call<br>
-        <span class="accent">Is a Job You<br>Didn't Get</span>
-      </h1>
-      <p class="hero-sub">
-        You're on a job. Your phone rings. No one answers. <strong>That homeowner calls your competitor.</strong>
-        AnsweredCallAI answers every call, qualifies every lead, and delivers it straight to you — 24 hours a day.
-      </p>
-      <div class="hero-cta-group">
-        <a href="#demo-form-section" class="btn-primary cta-button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-          Call the Demo Now
-        </a>
-        <p class="cta-subtext">Takes 30 seconds. See exactly how it handles your calls.</p>
-      </div>
-      <div class="hero-trust">
-        <div class="trust-item">
-          <div class="trust-check"></div>
-          30-day guarantee
-        </div>
-        <div class="trust-item">
-          <div class="trust-check"></div>
-          No long-term contract
-        </div>
-        <div class="trust-item">
-          <div class="trust-check"></div>
-          Fast setup
-        </div>
-      </div>
-    </div>
-    <div class="hero-card">
-      <p class="card-label">What it captures</p>
-      <div class="card-feature">
-        <div class="card-feature-dot"></div>
-        <div class="card-feature-text">
-          <strong>Homeowner name + phone</strong>
-          Every caller logged, no exceptions
-        </div>
-      </div>
-      <div class="card-feature">
-        <div class="card-feature-dot"></div>
-        <div class="card-feature-text">
-          <strong>Address + issue description</strong>
-          Moisture, mold, structural — qualified upfront
-        </div>
-      </div>
-      <div class="card-feature">
-        <div class="card-feature-dot"></div>
-        <div class="card-feature-text">
-          <strong>Urgency level</strong>
-          Active flooding flagged as emergency
-          <div class="priority-badge-row" aria-label="Priority examples">
-            <span class="priority-high">High Priority</span>
-            <span class="priority-medium">Medium Priority</span>
-            <span class="priority-low">Low Priority</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-feature">
-        <div class="card-feature-dot"></div>
-        <div class="card-feature-text">
-          <strong>Delivered instantly</strong>
-          SMS, email, or Google Sheets — your choice
-        </div>
-      </div>
-      <div class="card-feature">
-        <div class="card-feature-dot"></div>
-        <div class="card-feature-text">
-          <strong>Call recording + transcript</strong>
-          Full record, no he-said-she-said
-        </div>
-      </div>
+<!-- PRODUCTS -->
+<main id=”main”>
+<section class=”chooser-section”>
+  <div class=”chooser-inner”>
+    <p class=”hero-eyebrow” style=”justify-content: center; margin-bottom: 1.5rem;”>AnsweredCall</p>
+    <h1 class=”chooser-headline”>Turn contractor calls and voicemails<br>into organized lead records.</h1>
+    <p class=”chooser-sub”>Choose your product</p>
+    <div class=”chooser-grid”>
+      <a href=”/voicemail-to-sheet” class=”chooser-card”>
+        <span class=”chooser-card-tag”>Voicemail capture</span>
+        <h2>Voicemail to Sheet</h2>
+        <p>Missed voicemails become structured rows in Google Sheets automatically. Caller name, phone, address, service needed, urgency, and transcript — no manual entry required.</p>
+        <span class=”chooser-arrow”>See how it works →</span>
+      </a>
+      <a href=”/phone-intake” class=”chooser-card chooser-card-amber”>
+        <span class=”chooser-card-tag”>Live call intake</span>
+        <h2>Phone Intake</h2>
+        <p>Every inbound call is answered and qualified. Name, phone, address, job type, urgency, and transcript captured before you call back — while you’re still on the job.</p>
+        <span class=”chooser-arrow” style=”color: var(--amber);”>See how it works →</span>
+      </a>
     </div>
   </div>
 </section>
@@ -1372,16 +1244,16 @@
 <div class="stats-bar">
   <div class="stats-inner">
     <div>
-      <div class="stat-number">$4,200</div>
-      <div class="stat-label">Average crawlspace encapsulation job</div>
+      <div class="stat-number">1 Missed Call</div>
+      <div class="stat-label">Can turn into a crawlspace, roofing, HVAC, or foundation job you never even quote</div>
     </div>
     <div>
       <div class="stat-number">24/7</div>
-      <div class="stat-label">Calls answered — nights, weekends, always</div>
+      <div class="stat-label">Calls answered while you are on-site, after hours, or buried in voicemail</div>
     </div>
     <div>
       <div class="stat-number">&lt; 2s</div>
-      <div class="stat-label">Average answer time</div>
+      <div class="stat-label">Average answer time before the homeowner taps the next contractor</div>
     </div>
   </div>
 </div>
@@ -1389,8 +1261,8 @@
 <section style="padding: 2.5rem 2rem 0;">
   <div class="section-inner">
     <blockquote style="max-width: 860px; margin: 0 auto; background: var(--dark); border: 1px solid var(--border-light); border-radius: 16px; padding: 2rem; text-align: center;">
-      <p style="font-size: 20px; color: var(--white); line-height: 1.7; margin-bottom: 1rem;">"A Knoxville crawlspace contractor captured 3 after-hours leads in his first week — two of which closed."</p>
-      <footer style="font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green-light);">— AnsweredCallAI Early Adopter, Tennessee</footer>
+      <p style="font-size: 20px; color: var(--white); line-height: 1.7; margin-bottom: 1rem;">"We stopped waking up to random voicemails and started getting clean call summaries with the address, problem, urgency, and transcript ready to go."</p>
+      <footer style="font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green-light);">— AnsweredCall Early Adopter, Tennessee</footer>
     </blockquote>
   </div>
 </section>
@@ -1399,41 +1271,20 @@
 <section class="demo-capture-section" id="demo-form-section">
   <div class="section-inner">
     <div class="demo-capture-card">
-      <p class="section-eyebrow" style="justify-content: center;">Try It Right Now — Call the Demo</p>
-      <h2 class="demo-capture-title">Try It Right Now — Call the Demo</h2>
-      <!-- FORM HERE -->
+      <p class="section-eyebrow" style="justify-content: center;">Call the Demo Now</p>
+      <h2 class="demo-capture-title">Hear how your missed calls should be handled</h2>
       <div class="lead-form-card" id="demo">
-        <p class="lead-form-copy">Call this number right now. Act like a homeowner with a wet crawlspace. Hear exactly what your customers will hear — 24/7, live.</p>
+        <p class="lead-form-copy">Call this number right now and act like a homeowner. The demo will answer like your business, collect the full intake, and show you how fast a missed-call mess turns into a clean, qualified lead.</p>
         <div style="text-align:center; padding: 1.5rem 0 1rem;">
           <a href="tel:+19125560216" class="demo-phone-number">+1 (912) 556-0216</a>
         </div>
-        <p style="text-align:center; font-size:13px; color:var(--muted); margin-top:0.5rem;">
-          Try: "I've got water coming into my crawlspace" · "I smell mold under my house"
-        </p>
-      </div>
-      <div class="lead-form-card" style="margin-top: 1.5rem;">
-        <p class="lead-form-copy">Prefer a callback? Leave your details and we'll reach out to walk you through the setup.</p>
-        <form class="lead-form" id="lead-form" novalidate>
-          <div class="lead-form-field">
-            <label class="lead-form-label" for="lf-name">Your Name</label>
-            <input type="text" id="lf-name" name="name" placeholder="John Smith" required>
-          </div>
-          <div class="lead-form-field">
-            <label class="lead-form-label" for="lf-phone">Phone Number</label>
-            <input type="tel" id="lf-phone" name="phone" placeholder="(555) 123-4567" required>
-          </div>
-          <div class="lead-form-field">
-            <label class="lead-form-label" for="lf-email">Business Email</label>
-            <input type="email" id="lf-email" name="email" placeholder="you@yourbusiness.com" required>
-          </div>
-          <label class="sms-consent">
-            <input type="checkbox" name="sms_consent" required>
-            I agree to receive SMS/text messages from AnsweredCallAI about my demo request, missed-call alerts, setup updates, and service-related follow-ups. Message and data rates may apply. Message frequency may vary. Reply STOP to opt out or HELP for help.
-          </label>
-          <button type="submit" class="btn-demo-submit">Request Demo Info</button>
-          <p class="sms-disclosure">By submitting this form, you agree to receive calls, emails, and SMS/text messages from AnsweredCallAI related to your inquiry. Consent is not a condition of purchase. Reply STOP to unsubscribe from SMS messages.</p>
-          <p class="lead-form-message" id="lead-form-message" aria-live="polite"></p>
-        </form>
+        <p class="demo-instruction" style="text-align:center; margin-bottom:0;">Try one of these:</p>
+        <ul class="demo-proof-list">
+          <li>"I have water coming into the crawlspace and need someone out here fast."</li>
+          <li>"We found a crack in the foundation and doors are sticking."</li>
+          <li>"My roof is leaking into the ceiling after the storm."</li>
+          <li>"The AC stopped working and the house is already 84 degrees."</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -1443,25 +1294,25 @@
 <section>
   <div class="section-inner">
     <p class="section-eyebrow">How it works</p>
-    <h2 class="section-title">Simple from day one</h2>
-    <p class="section-sub">Built specifically for crawlspace and foundation contractors. No tech experience needed.</p>
+    <h2 class="section-title">What replaces missed calls and messy follow-up</h2>
+    <p class="section-sub">Built for crawlspace, foundation, roofing, HVAC, and home service contractors who need the full intake before they call back.</p>
     <div class="how-grid">
       <div class="how-step">
         <span class="step-number">01</span>
         <div class="step-title">Homeowner calls</div>
-        <p class="step-body">Your dedicated AnsweredCallAI number picks up in under 2 seconds. A professional AI agent greets them by your company name and takes over.</p>
-        <span class="step-tag">Always on</span>
+        <p class="step-body">You are on a job, on a ladder, under a crawlspace, or driving. Instead of sending that homeowner to voicemail, AnsweredCall answers in seconds.</p>
+        <span class="step-tag">No dead air</span>
       </div>
       <div class="how-step">
         <span class="step-number">02</span>
-        <div class="step-title">Lead is qualified</div>
-        <p class="step-body">The agent collects name, phone, address, issue description, and urgency. Emergency situations like active flooding are flagged and routed immediately.</p>
-        <span class="step-tag">Custom to your services</span>
+        <div class="step-title">Full intake gets captured</div>
+        <p class="step-body">The call captures homeowner name, phone, property address, job description, urgency, and a transcript so you are not piecing together half-heard voicemails later.</p>
+        <span class="step-tag">Qualified up front</span>
       </div>
       <div class="how-step">
         <span class="step-number">03</span>
-        <div class="step-title">You get the lead</div>
-        <p class="step-body">Full lead details delivered instantly by SMS or email. Call recording and transcript saved automatically. You follow up when you're ready.</p>
+        <div class="step-title">You know who to call back first</div>
+        <p class="step-body">Lead details hit your phone instantly by SMS, email, or Google Sheets, with urgent calls flagged first and the full transcript ready before you call back.</p>
         <span class="step-tag">Instant delivery</span>
       </div>
     </div>
@@ -1472,9 +1323,9 @@
 <section class="video-section">
   <div class="section-inner">
     <div class="video-header">
-      <p class="section-eyebrow" style="justify-content: center;">See it in action</p>
-      <h2 class="section-title">Watch a real demo</h2>
-      <p class="section-sub" style="margin: 0 auto; text-align: center;">AI-driven emergency lead response for contractors — live walkthrough.</p>
+      <p class="section-eyebrow" style="justify-content: center;">See the missed-call fix</p>
+      <h2 class="section-title">Watch how the intake actually works</h2>
+      <p class="section-sub" style="margin: 0 auto; text-align: center;">See how a contractor call gets answered, qualified, summarized, and sent over without the usual voicemail chase.</p>
     </div>
     <div class="video-wrapper">
       <iframe
@@ -1483,7 +1334,7 @@
         webkitallowfullscreen
         mozallowfullscreen
         allowfullscreen
-        title="AnsweredCallAI Demo">
+        title="AnsweredCall Demo">
       </iframe>
     </div>
   </div>
@@ -1494,12 +1345,12 @@
   <div class="section-inner">
     <div class="pricing-header">
       <p class="section-eyebrow" style="justify-content: center;">Pricing</p>
-      <h2 class="section-title">One plan. No surprises.</h2>
-      <p class="section-sub" style="margin: 0 auto; text-align: center;">Flat rate built for owner-operated contractors. Start capturing missed jobs immediately.</p>
+      <h2 class="section-title">One plan to stop missed-call leakage</h2>
+      <p class="section-sub" style="margin: 0 auto; text-align: center;">Straightforward pricing for contractors who want every inbound lead answered, captured, and routed cleanly.</p>
     </div>
     <div class="pricing-card">
       <div class="pricing-card-header">
-        <p class="pricing-plan-name">AI Phone Intake System</p>
+        <p class="pricing-plan-name">Missed-Call Intake System</p>
         <div class="pricing-price">
           <span class="price-dollar">$</span>
           <span class="price-amount">297</span>
@@ -1510,47 +1361,38 @@
       <div class="pricing-features">
         <div class="pricing-feature">
           <div class="feature-check"></div>
-          <span class="feature-text"><strong>24/7 AI call answering</strong> — nights, weekends, on-site, always</span>
+          <span class="feature-text"><strong>24/7 call answering</strong> — while you are on jobs, after hours, or buried in current work</span>
         </div>
         <div class="pricing-feature">
           <div class="feature-check"></div>
-          <span class="feature-text"><strong>Lead qualification</strong> — name, phone, address, issue, urgency</span>
+          <span class="feature-text"><strong>Full homeowner intake</strong> — name, phone, address, job description, and urgency</span>
         </div>
         <div class="pricing-feature">
           <div class="feature-check"></div>
-          <span class="feature-text"><strong>Emergency routing</strong> — flooding, active water intrusion flagged immediately</span>
+          <span class="feature-text"><strong>Emergency routing</strong> — active leaks, no-cool calls, and urgent issues flagged immediately</span>
         </div>
         <div class="pricing-feature">
           <div class="feature-check"></div>
-          <span class="feature-text"><strong>Spam call filtering</strong> — no junk in your lead list</span>
+          <span class="feature-text"><strong>Transcript and recording</strong> — full context before you call the homeowner back</span>
         </div>
         <div class="pricing-feature">
           <div class="feature-check"></div>
-          <span class="feature-text"><strong>Instant lead delivery</strong> — SMS, email, or Google Sheets</span>
+          <span class="feature-text"><strong>Instant lead delivery</strong> — SMS, email, or Google Sheets sent straight to the contractor</span>
         </div>
         <div class="pricing-feature">
           <div class="feature-check"></div>
-          <span class="feature-text"><strong>Call recording + transcript</strong> — every conversation saved</span>
+          <span class="feature-text"><strong>Trade-specific intake flow</strong> — crawlspace, foundation, roofing, HVAC, and home service scenarios</span>
         </div>
         <div class="pricing-feature">
           <div class="feature-check"></div>
-          <span class="feature-text"><strong>Dedicated phone number</strong> — yours, branded to your business</span>
-        </div>
-        <div class="pricing-feature">
-          <div class="feature-check"></div>
-          <span class="feature-text"><strong>Custom script</strong> — built specifically for your services and market</span>
+          <span class="feature-text"><strong>Dedicated number and setup</strong> — built around your company and service area</span>
         </div>
       </div>
       <div class="pricing-cta">
         <a href="#demo-form-section" class="btn-pricing">
           Call the Demo Now
         </a>
-        <p class="pricing-demo-note">
-          Email: <a href="#" class="copy-email" data-email="sales@answeredcallai.com">sales@answeredcallai.com</a> <span class="copy-email-hint">(click to copy)</span><span class="copy-toast" id="toast-pricing">copied</span>
-        </p>
-        <a href="https://buy.stripe.com/eVq7sKauSaXr9Ei1E37kc06" target="_blank" rel="noopener" class="pricing-secondary-cta">
-          Already decided? Get set up now →
-        </a>
+        <p class="pricing-demo-note">Call the live demo and hear exactly what happens when a homeowner reaches you instead of voicemail.</p>
       </div>
     </div>
     <p class="pricing-guarantee">
@@ -1562,24 +1404,24 @@
 
 <!-- LEGAL / CONTACT -->
 <section style="background: var(--off-black); border-top: 1px solid var(--border); padding: 4rem 2rem;">
-  <div class="section-inner" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem;">
+  <div class="section-inner legal-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem;">
     <article id="privacy">
       <p style="font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem;">Privacy Policy</p>
-      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.75rem;">AnsweredCallAI collects caller details strictly to qualify leads, route urgent issues, and deliver call information to the contractor using the system.</p>
+      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.75rem;">AnsweredCall collects caller details strictly to qualify leads, route urgent issues, and deliver call information to the contractor using the system.</p>
       <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">Information is used for intake operations and service delivery only and is not sold to unrelated third parties.</p>
     </article>
     <article id="terms">
       <p style="font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem;">Terms of Service</p>
-      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.75rem;">Service includes AI-powered phone intake, message routing, and lead delivery configured for your crawlspace business.</p>
+      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.75rem;">Service includes contractor phone intake, message routing, transcript capture, and lead delivery configured for crawlspace, foundation, roofing, HVAC, and home service businesses.</p>
       <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">Plans are billed monthly, include a one-time setup fee, and may be canceled without a long-term contract commitment.</p>
     </article>
     <article id="contact">
       <p style="font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem;">Contact</p>
-      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.5rem;"><strong style="color: var(--text);">AnsweredCallAI</strong></p>
-      <p style="font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 0.75rem;">AI phone intake and missed-call response system for contractors</p>
-      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.5rem;">Sales: <a href="#" class="copy-email" data-email="sales@answeredcallai.com" style="color: var(--green-light); text-decoration: none;">sales@answeredcallai.com</a><span class="copy-toast">copied</span></p>
-      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.5rem;">Business: <a href="mailto:contact@answeredcallai.com" style="color: var(--green-light); text-decoration: none;">contact@answeredcallai.com</a></p>
-      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.75rem;">Website: <a href="https://answeredcallai.com" style="color: var(--green-light); text-decoration: none;">answeredcallai.com</a></p>
+      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.5rem;"><strong style="color: var(--text);">AnsweredCall</strong></p>
+      <p style="font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 0.75rem;">Missed-call intake system for contractors who need clean lead follow-up</p>
+      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.5rem;">Demo line: +1 (912) 556-0216</p>
+      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.5rem;">Business: sales@answeredcallai.com</p>
+      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.75rem;">Website: answeredcallai.com</p>
       <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">Serving urgent-service contractors across Tennessee and beyond.</p>
     </article>
   </div>
@@ -1588,17 +1430,17 @@
 <section class="tl-section" aria-labelledby="truth-layer-title">
   <div class="tl-inner">
     <p class="tl-eyebrow">What You're Actually Getting</p>
-    <h2 class="tl-title" id="truth-layer-title">Built for contractors who lose jobs from missed calls</h2>
+    <h2 class="tl-title" id="truth-layer-title">Built for contractors who need cleaner follow-up and faster callbacks</h2>
 
     <div class="tl-grid">
       <div>
         <p class="tl-column-label">What it does</p>
         <ul class="tl-list">
-          <li>AI phone intake for crawlspace, foundation, water damage, fire and mold restoration, plumbing, HVAC, septic, sewer, and electrical contractors — trades where homeowners won't wait and will call the next number on the list.</li>
-          <li>Answers missed and after-hours calls — no voicemail, no dead ends</li>
-          <li>Captures homeowner name, phone, address, job type, urgency, and a full call summary</li>
-          <li>Delivers lead details instantly by SMS, email, or Google Sheets</li>
-          <li>Flags emergency and high-priority calls so you know what to call back first</li>
+          <li>Answers inbound calls for crawlspace, foundation, roofing, HVAC, and other home service contractors before the homeowner moves to the next company</li>
+          <li>Captures homeowner name, phone, property address, job description, urgency, and transcript in one intake flow</li>
+          <li>Stops the usual "call me back" voicemail pileup that slows down follow-up and costs jobs</li>
+          <li>Sends the lead instantly so the contractor has clean notes before returning the call</li>
+          <li>Flags emergency and high-priority calls so urgent work gets called back first</li>
         </ul>
       </div>
 
@@ -1608,7 +1450,7 @@
           <li>$197 setup + $297/mo — or $497/mo flat (no setup fee)</li>
           <li>No long-term contract — cancel anytime</li>
           <li>30-day money-back guarantee</li>
-          <li>Demo available by phone — call or text to hear it live</li>
+          <li>Live phone demo available now at +1 (912) 556-0216</li>
         </ul>
       </div>
     </div>
@@ -1618,8 +1460,8 @@
         <p class="tl-fit-label tl-fit-label-best">Best fit</p>
         <ul class="tl-list">
           <li>Contractors who miss calls while on the job</li>
-          <li>Businesses that run emergency or urgent service calls</li>
-          <li>Owners who want leads texted the moment they come in</li>
+          <li>Teams tired of chasing scattered voicemails and half-complete call notes</li>
+          <li>Owners who want every new lead texted over the moment it comes in</li>
         </ul>
       </div>
 
@@ -1627,7 +1469,7 @@
         <p class="tl-fit-label tl-fit-label-not">Not best fit</p>
         <ul class="tl-list tl-list-x">
           <li>Businesses that already answer every call live 24/7</li>
-          <li>Companies that only want a generic chatbot</li>
+          <li>Companies looking for generic software instead of a contractor intake system</li>
           <li>Businesses that won't follow up with leads quickly</li>
         </ul>
       </div>
@@ -1645,9 +1487,9 @@
           <div class="footer-logo">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
           </div>
-          AnsweredCallAI
+          AnsweredCall
         </div>
-        <p class="footer-tagline">Never miss an urgent service call again.</p>
+        <p class="footer-tagline">Turn contractor calls and voicemails into organized lead records.</p>
         <p class="footer-built-by">Built by Nathan Bentley</p>
       </div>
       <div>
@@ -1661,180 +1503,23 @@
       <div>
         <p class="footer-contact-title">Get in touch</p>
         <div class="footer-contact-row">
-          <a href="#" class="footer-contact-email copy-email" data-email="sales@answeredcallai.com">sales@answeredcallai.com</a>
-          <span class="copy-toast">copied</span>
+          <span class="footer-contact-email">Demo line: +1 (912) 556-0216</span>
         </div>
         <div class="footer-contact-row" style="margin-top: 0.4rem;">
-          <a href="mailto:contact@answeredcallai.com" class="footer-contact-email">contact@answeredcallai.com</a>
+          <span class="footer-contact-email">Business: sales@answeredcallai.com</span>
         </div>
         <p class="footer-contact-service">Serving urgent-service contractors across Tennessee and beyond.</p>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Nathan Bentley. All rights reserved.</span>
-      <span>AnsweredCallAI — Every call answered. Every lead captured.</span>
+      <span>AnsweredCall — Turn contractor calls and voicemails into organized lead records.</span>
     </div>
   </div>
 </footer>
 
 <script src="script.js"></script>
 <script>
-  function showCopyToast(el) {
-    var toast = el.parentElement && el.parentElement.querySelector('.copy-toast');
-    if (!toast) {
-      toast = el.closest('.pricing-demo-note') && el.closest('.pricing-demo-note').querySelector('.copy-toast');
-    }
-    if (!toast) {
-      toast = document.querySelector('.copy-toast');
-    }
-    if (toast) {
-      toast.classList.add('show');
-      setTimeout(function() {
-        toast.classList.remove('show');
-      }, 2000);
-    }
-  }
-
-  function copyWithExecCommand(text) {
-    var textarea = document.createElement('textarea');
-    textarea.value = text;
-    textarea.setAttribute('readonly', '');
-    textarea.setAttribute('aria-hidden', 'true');
-    textarea.style.position = 'fixed';
-    textarea.style.top = '-9999px';
-    textarea.style.left = '-9999px';
-
-    document.body.appendChild(textarea);
-    textarea.focus();
-    textarea.select();
-
-    var copied = false;
-
-    try {
-      copied = document.execCommand('copy');
-    } catch (error) {
-      copied = false;
-    }
-
-    document.body.removeChild(textarea);
-    return copied;
-  }
-
-  function copyEmail(email) {
-    if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
-      return navigator.clipboard.writeText(email).then(function() {
-        return true;
-      }).catch(function() {
-        return copyWithExecCommand(email);
-      });
-    }
-
-    return Promise.resolve(copyWithExecCommand(email));
-  }
-
-  // Copy email to clipboard
-  document.querySelectorAll('.copy-email').forEach(function(el) {
-    el.addEventListener('click', function(e) {
-      e.preventDefault();
-
-      var email = this.getAttribute('data-email');
-
-      copyEmail(email).then(function(copied) {
-        if (copied) {
-          showCopyToast(el);
-          return;
-        }
-
-        window.location.href = 'mailto:' + email;
-      });
-    });
-  });
-
-  // Lead form — SMS consent required before submission
-  var leadForm = document.getElementById('lead-form');
-  if (leadForm) {
-    leadForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      var form = this;
-      var btn = form.querySelector('.btn-demo-submit');
-      var msg = document.getElementById('lead-form-message');
-      var consent = form.querySelector('[name="sms_consent"]');
-
-      if (!consent.checked) {
-        msg.textContent = 'Please check the SMS consent box to continue.';
-        msg.className = 'lead-form-message is-error';
-        consent.focus();
-        return;
-      }
-
-      if (!form.querySelector('[name="name"]').value.trim() ||
-          !form.querySelector('[name="phone"]').value.trim() ||
-          !form.querySelector('[name="email"]').value.trim()) {
-        msg.textContent = 'Please fill in all fields.';
-        msg.className = 'lead-form-message is-error';
-        return;
-      }
-
-      btn.disabled = true;
-      btn.textContent = 'Sending…';
-
-      var payload = {
-        name: form.querySelector('[name="name"]').value.trim(),
-        phone: form.querySelector('[name="phone"]').value.trim(),
-        email: form.querySelector('[name="email"]').value.trim(),
-        sms_consent: true,
-        sms_consent_text: 'I agree to receive SMS/text messages from AnsweredCallAI about my demo request, missed-call alerts, setup updates, and service-related follow-ups. Message and data rates may apply. Message frequency may vary. Reply STOP to opt out or HELP for help.'
-      };
-
-      // Set WEBHOOK_URL to your n8n endpoint to enable live submission
-      var WEBHOOK_URL = '';
-
-      function onSuccess() {
-        msg.textContent = 'Got it—we’ll reach out shortly.';
-        msg.className = 'lead-form-message is-success';
-        form.reset();
-        btn.disabled = false;
-        btn.textContent = 'Request Demo Info';
-      }
-
-      function onError() {
-        msg.textContent = 'Something went wrong. Email us at contact@answeredcallai.com.';
-        msg.className = 'lead-form-message is-error';
-        btn.disabled = false;
-        btn.textContent = 'Request Demo Info';
-      }
-
-      if (WEBHOOK_URL) {
-        fetch(WEBHOOK_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        }).then(function(r) {
-          if (r.ok) { onSuccess(); } else { onError(); }
-        }).catch(onError);
-      } else {
-        window.location.href = 'mailto:contact@answeredcallai.com'
-          + '?subject=' + encodeURIComponent('Demo Request — ' + payload.name)
-          + '&body=' + encodeURIComponent(
-              'Name: ' + payload.name + '\n'
-            + 'Phone: ' + payload.phone + '\n'
-            + 'Email: ' + payload.email + '\n'
-            + 'SMS Consent: Yes'
-            );
-        onSuccess();
-      }
-    });
-  }
-
-  // Ensure all mailto buttons work as fallback
-  document.querySelectorAll('.btn-pricing').forEach(function(el) {
-    el.addEventListener('click', function(e) {
-      var href = this.getAttribute('href');
-      if (href && href.startsWith('mailto:')) {
-        window.location.href = href;
-      }
-    });
-  });
 </script>
 </body>
 </html>
