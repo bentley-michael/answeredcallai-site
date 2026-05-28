@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AnsweredCall Privacy Policy — how we collect, use, and protect your information." />
+<title>Privacy Policy | AnsweredCall</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="../favicon.png" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0a0a0a;
+    --off-black: #111111;
+    --dark: #1a1a1a;
+    --border: #2a2a2a;
+    --border-light: #333333;
+    --green: #16a34a;
+    --green-light: #22c55e;
+    --white: #ffffff;
+    --muted: #888884;
+    --muted-light: #aaa9a4;
+    --text: #e8e7e3;
+    --text-secondary: #b0afa9;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--black); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem; height: 60px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo { width: 32px; height: 32px; background: var(--green); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+  .nav-logo svg { width: 18px; height: 18px; fill: white; }
+  .nav-brand-name { font-weight: 600; font-size: 17px; color: var(--white); letter-spacing: -0.3px; }
+  .nav-back { font-size: 13px; color: var(--muted-light); text-decoration: none; transition: color 0.15s; }
+  .nav-back:hover { color: var(--white); }
+
+  /* CONTENT */
+  .legal-wrap { max-width: 680px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+
+  .legal-eyebrow {
+    font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--green-light);
+    margin-bottom: 1rem; display: flex; align-items: center; gap: 8px;
+  }
+  .legal-eyebrow::before { content: ''; display: inline-block; width: 16px; height: 1px; background: var(--green-light); }
+
+  .legal-wrap h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 6vw, 56px);
+    line-height: 1; letter-spacing: 0.5px; color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+
+  .legal-date { font-size: 13px; color: var(--muted); margin-bottom: 3rem; font-family: 'DM Mono', monospace; }
+
+  .legal-wrap h2 {
+    font-size: 15px; font-weight: 600; color: var(--white);
+    margin: 2.5rem 0 0.75rem; letter-spacing: -0.2px;
+  }
+
+  .legal-wrap p { font-size: 15px; color: var(--text-secondary); line-height: 1.75; font-weight: 300; margin-bottom: 1rem; }
+  .legal-wrap ul { margin: 0.5rem 0 1rem 1.25rem; display: grid; gap: 0.4rem; }
+  .legal-wrap ul li { font-size: 15px; color: var(--text-secondary); line-height: 1.65; font-weight: 300; }
+  .legal-wrap a { color: var(--green-light); text-decoration: none; }
+  .legal-wrap a:hover { text-decoration: underline; }
+
+  .legal-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+
+  /* FOOTER */
+  footer { background: var(--off-black); border-top: 1px solid var(--border); padding: 2rem; }
+  .footer-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  .footer-brand { font-weight: 600; font-size: 15px; color: var(--white); }
+  .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.15s; }
+  .footer-links a:hover { color: var(--white); }
+  .footer-copy { font-size: 12px; color: var(--border-light); width: 100%; }
+
+  @media (max-width: 640px) {
+    nav { padding: 0 1rem; }
+    .legal-wrap { padding: 3rem 1rem 4rem; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-brand">
+    <div class="nav-logo">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    </div>
+    <span class="nav-brand-name">AnsweredCall</span>
+  </a>
+  <a href="/" class="nav-back">← All products</a>
+</nav>
+
+<main>
+<div class="legal-wrap">
+  <p class="legal-eyebrow">Legal</p>
+  <h1>Privacy Policy</h1>
+  <p class="legal-date">Effective date: May 2026</p>
+
+  <h2>Who We Are</h2>
+  <p>AnsweredCall is operated by Michael Bentley as a sole proprietor. We provide AI-assisted phone intake and voicemail capture services for home service contractors. Our website is answeredcallai.com.</p>
+
+  <h2>Information We Collect</h2>
+  <p>When you use our services or interact with us, we may collect:</p>
+  <ul>
+    <li>Phone numbers submitted through our contact or signup forms</li>
+    <li>Message content from SMS interactions, including voicemail transcripts and call summaries</li>
+    <li>Business contact information you provide, such as name, company name, and email address</li>
+  </ul>
+
+  <h2>How We Use Your Information</h2>
+  <p>We use collected information solely to deliver the services you requested:</p>
+  <ul>
+    <li>Processing voicemail transcripts and delivering structured lead data to Google Sheets</li>
+    <li>Sending SMS notifications and service-related updates</li>
+    <li>Responding to your inquiries and providing support</li>
+  </ul>
+  <p>We do not use your information for advertising or unrelated marketing purposes.</p>
+
+  <h2>SMS Communications</h2>
+  <p>By providing your phone number and requesting our services, you consent to receive SMS messages from AnsweredCall related to your service setup and account. Message and data rates may apply. Message frequency varies. Reply <strong>STOP</strong> at any time to opt out. Reply <strong>HELP</strong> for support.</p>
+
+  <h2>No Third-Party Sharing</h2>
+  <p>We do not sell, rent, or share your personal information with third parties for marketing or any purpose other than delivering the services described above. We do not share your data with data brokers.</p>
+
+  <h2>Data Retention</h2>
+  <p>We retain information only as long as necessary to provide our services. You may request deletion of your information at any time by contacting us at the address below.</p>
+
+  <hr class="legal-divider">
+
+  <h2>Contact &amp; Data Removal</h2>
+  <p>To request removal of your data or for any privacy-related questions, contact us at <a href="mailto:sales@answeredcallai.com">sales@answeredcallai.com</a> or visit <a href="https://answeredcallai.com">answeredcallai.com</a>.</p>
+</div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-brand">AnsweredCall</span>
+    <div class="footer-links">
+      <a href="/voicemail-to-sheet/">Voicemail-to-Sheet</a>
+      <a href="/phone-intake/">Phone Intake</a>
+      <a href="/privacy-policy/">Privacy Policy</a>
+      <a href="/terms/">Terms</a>
+    </div>
+    <span class="footer-copy">© 2026 Nathan Bentley &nbsp;·&nbsp; answeredcallai.com</span>
+  </div>
+</footer>
+
+</body>
+</html>
