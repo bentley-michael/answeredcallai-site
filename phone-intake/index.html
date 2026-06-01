@@ -1426,11 +1426,11 @@
             <input type="email" id="lf-email" name="email" placeholder="you@yourbusiness.com" required>
           </div>
           <label class="sms-consent">
-            <input type="checkbox" name="sms_consent" required>
-            I agree to receive SMS/text messages from AnsweredCall about my demo request, missed-call alerts, setup updates, and service-related follow-ups. Message and data rates may apply. Message frequency may vary. Reply STOP to opt out or HELP for help.
+            <input type="checkbox" name="smsConsent">
+            I agree to receive text messages from AnsweredCall about my inquiry, demo request, and related follow-up. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out or HELP for help. Consent is not a condition of purchase.
           </label>
           <button type="submit" class="btn-demo-submit">Request Demo Info</button>
-          <p class="sms-disclosure">By submitting this form, you agree to receive calls, emails, and SMS/text messages from AnsweredCall related to your inquiry. Consent is not a condition of purchase. Reply STOP to unsubscribe from SMS messages.</p>
+          <p class="sms-disclosure">By submitting this form, you consent to be contacted by AnsweredCall. Consent is not a condition of purchase. View our <a href="/privacy-policy/" style="color:var(--green-light);text-decoration:none;">Privacy Policy</a> and <a href="/terms/" style="color:var(--green-light);text-decoration:none;">Terms of Service</a>.</p>
           <p class="lead-form-message" id="lead-form-message" aria-live="polite"></p>
         </form>
       </div>
@@ -1757,14 +1757,7 @@
       var form = this;
       var btn = form.querySelector('.btn-demo-submit');
       var msg = document.getElementById('lead-form-message');
-      var consent = form.querySelector('[name="sms_consent"]');
-
-      if (!consent.checked) {
-        msg.textContent = 'Please check the SMS consent box to continue.';
-        msg.className = 'lead-form-message is-error';
-        consent.focus();
-        return;
-      }
+      var consent = form.querySelector('[name="smsConsent"]');
 
       if (!form.querySelector('[name="name"]').value.trim() ||
           !form.querySelector('[name="phone"]').value.trim() ||
@@ -1781,8 +1774,8 @@
         name: form.querySelector('[name="name"]').value.trim(),
         phone: form.querySelector('[name="phone"]').value.trim(),
         email: form.querySelector('[name="email"]').value.trim(),
-        sms_consent: true,
-        sms_consent_text: 'I agree to receive SMS/text messages from AnsweredCall about my demo request, missed-call alerts, setup updates, and service-related follow-ups. Message and data rates may apply. Message frequency may vary. Reply STOP to opt out or HELP for help.'
+        smsConsent: consent.checked,
+        sms_consent_text: consent.checked ? 'I agree to receive text messages from AnsweredCall about my inquiry, demo request, and related follow-up. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out or HELP for help. Consent is not a condition of purchase.' : ''
       };
 
       // Set WEBHOOK_URL to your n8n endpoint to enable live submission
