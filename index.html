@@ -25,10 +25,10 @@
     --dark: #1a1a1a;
     --border: #2a2a2a;
     --border-light: #333333;
-    --amber: #f59e0b;
-    --amber-light: #fcd34d;
-    --green: #16a34a;
-    --green-light: #22c55e;
+    --teal: #2d5a6f;
+    --teal-light: #3d7a8f;
+    --cream: #f5f1e8;
+    --cream-dark: #e8dcc8;
     --white: #ffffff;
     --muted: #888884;
     --muted-light: #aaa9a4;
@@ -50,23 +50,23 @@
   }
 
   .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .nav-logo { width: 32px; height: 32px; background: var(--green); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+  .nav-logo { width: 40px; height: 40px; background: var(--teal); border-radius: 8px; display: flex; align-items: center; justify-content: center; padding: 4px; }
   .nav-logo svg { width: 18px; height: 18px; fill: white; }
   .nav-brand-name { font-weight: 600; font-size: 17px; color: var(--white); letter-spacing: -0.3px; }
 
   .nav-right { display: flex; align-items: center; gap: 1.25rem; }
   .nav-link { font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: color 0.15s; white-space: nowrap; }
   .nav-link:hover { color: var(--white); }
-  .nav-cta { background: var(--amber); color: #0a0a0a; text-decoration: none; font-size: 14px; font-weight: 600; padding: 8px 18px; border-radius: 6px; transition: background 0.15s; white-space: nowrap; }
-  .nav-cta:hover { background: var(--amber-light); }
+  .nav-cta { background: var(--cream); color: var(--teal); text-decoration: none; font-size: 14px; font-weight: 600; padding: 8px 18px; border-radius: 6px; transition: background 0.15s; white-space: nowrap; }
+  .nav-cta:hover { background: var(--cream-dark); }
 
   /* HERO */
   .hero { padding: 6rem 2rem 4rem; text-align: center; position: relative; overflow: hidden; }
-  .hero::before { content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 700px; height: 500px; background: radial-gradient(circle, rgba(22,163,74,0.06) 0%, transparent 70%); pointer-events: none; }
+  .hero::before { content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 700px; height: 500px; background: radial-gradient(circle, rgba(45,90,111,0.08) 0%, transparent 70%); pointer-events: none; }
   .hero-inner { max-width: 720px; margin: 0 auto; position: relative; }
 
-  .hero-eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--green-light); margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; gap: 8px; }
-  .hero-eyebrow::before { content: ''; display: inline-block; width: 16px; height: 1px; background: var(--green-light); }
+  .hero-eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--teal-light); margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .hero-eyebrow::before { content: ''; display: inline-block; width: 16px; height: 1px; background: var(--teal-light); }
 
   h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(42px, 6vw, 72px); line-height: 1; letter-spacing: 0.5px; color: var(--white); margin-bottom: 1.5rem; }
 
@@ -78,40 +78,40 @@
 
   .product-card { display: block; text-decoration: none; background: var(--dark); border: 1px solid var(--border-light); border-radius: 16px; padding: 2.5rem 2rem; position: relative; overflow: hidden; transition: transform 0.15s, border-color 0.15s; }
   .product-card:hover { transform: translateY(-2px); border-color: #444; }
-  .product-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--green); }
-  .product-card-amber::before { background: var(--amber); }
+  .product-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--teal); }
+  .product-card-cream::before { background: var(--cream); }
 
-  .card-badge { display: inline-block; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green-light); margin-bottom: 1rem; }
-  .product-card-amber .card-badge { color: var(--amber); }
+  .card-badge { display: inline-block; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--teal-light); margin-bottom: 1rem; }
+  .product-card-cream .card-badge { color: var(--cream); }
 
   .product-card h2 { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--white); margin-bottom: 0.75rem; line-height: 1; letter-spacing: 0.5px; }
   .product-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.65; font-weight: 300; margin-bottom: 1.75rem; }
 
-  .card-cta { font-size: 14px; font-weight: 500; color: var(--green-light); }
-  .product-card-amber .card-cta { color: var(--amber); }
+  .card-cta { font-size: 14px; font-weight: 500; color: var(--teal-light); }
+  .product-card-cream .card-cta { color: var(--cream); }
 
   /* TRUST STRIP */
   .trust-strip { background: var(--off-black); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1.75rem 2rem; }
   .trust-strip-inner { max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2rem; }
   .trust-item { display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--muted); }
-  .trust-check { width: 14px; height: 14px; background: rgba(22,163,74,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .trust-check::after { content: '✓'; font-size: 9px; color: var(--green-light); font-weight: 700; }
+  .trust-check { width: 14px; height: 14px; background: rgba(45,90,111,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .trust-check::after { content: '✓'; font-size: 9px; color: var(--teal-light); font-weight: 700; }
 
   /* DEMO / CONTACT */
   .demo-section { padding: 5rem 2rem; text-align: center; background: var(--off-black); border-top: 1px solid var(--border); }
   .demo-inner { max-width: 520px; margin: 0 auto; }
-  .demo-eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--amber); margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; gap: 8px; }
-  .demo-eyebrow::before { content: ''; display: inline-block; width: 16px; height: 1px; background: var(--amber); }
+  .demo-eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--cream); margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .demo-eyebrow::before { content: ''; display: inline-block; width: 16px; height: 1px; background: var(--cream); }
   .demo-headline { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 44px); color: var(--white); line-height: 1.05; margin-bottom: 1rem; }
   .demo-copy { font-size: 15px; color: var(--text-secondary); line-height: 1.7; font-weight: 300; margin-bottom: 2rem; }
   .choose-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
   .btn-choose { display: inline-block; text-decoration: none; font-size: 15px; font-weight: 600; padding: 13px 24px; border-radius: 8px; transition: all 0.15s; }
-  .btn-choose-green { background: var(--green); color: white; }
-  .btn-choose-green:hover { background: var(--green-light); transform: translateY(-1px); }
-  .btn-choose-amber { background: var(--amber); color: #0a0a0a; }
-  .btn-choose-amber:hover { background: var(--amber-light); transform: translateY(-1px); }
+  .btn-choose-teal { background: var(--teal); color: white; }
+  .btn-choose-teal:hover { background: var(--teal-light); transform: translateY(-1px); }
+  .btn-choose-cream { background: var(--cream); color: var(--teal); }
+  .btn-choose-cream:hover { background: var(--cream-dark); transform: translateY(-1px); }
   .contact-line { font-size: 13px; color: var(--muted); }
-  .contact-line a { color: var(--green-light); text-decoration: none; }
+  .contact-line a { color: var(--teal-light); text-decoration: none; }
   .contact-line a:hover { text-decoration: underline; }
 
   /* FOOTER */
@@ -140,12 +140,48 @@
 </head>
 <body>
 
-<a class="skip-link" href="#main" style="position:absolute;left:-9999px;top:0;background:var(--green);color:white;padding:8px 16px;z-index:9999;border-radius:0 0 6px 0;font-size:14px;">Skip to content</a>
+<a class="skip-link" href="#main" style="position:absolute;left:-9999px;top:0;background:var(--teal);color:white;padding:8px 16px;z-index:9999;border-radius:0 0 6px 0;font-size:14px;">Skip to content</a>
 
 <nav>
   <a href="/" class="nav-brand">
     <div class="nav-logo">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg" style="width: 32px; height: 32px;">
+        <!-- Desk -->
+        <rect x="30" y="160" width="140" height="25" fill="#f5f1e8"/>
+        
+        <!-- Chair back -->
+        <rect x="70" y="110" width="60" height="55" fill="#f5f1e8" rx="8"/>
+        
+        <!-- Torso -->
+        <rect x="75" y="85" width="50" height="50" fill="#f5f1e8" rx="5"/>
+        
+        <!-- Neck -->
+        <rect x="95" y="75" width="10" height="15" fill="#f5f1e8"/>
+        
+        <!-- Head -->
+        <circle cx="100" cy="60" r="18" fill="#f5f1e8"/>
+        
+        <!-- Left arm (on desk) -->
+        <path d="M 75 95 L 50 130 L 48 125 L 77 92 Z" fill="#f5f1e8"/>
+        
+        <!-- Right arm (holding phone) -->
+        <path d="M 125 95 L 150 85 L 152 92 L 128 100 Z" fill="#f5f1e8"/>
+        
+        <!-- Right forearm (more angled for phone to ear) -->
+        <path d="M 150 85 L 155 65 L 158 70 L 152 92 Z" fill="#f5f1e8"/>
+        
+        <!-- Phone handset at ear -->
+        <ellipse cx="158" cy="58" rx="6" ry="12" fill="#f5f1e8" transform="rotate(-30 158 58)"/>
+        
+        <!-- Desk phone base -->
+        <rect x="135" y="155" width="18" height="20" fill="#f5f1e8" rx="2"/>
+        
+        <!-- Desk phone receiver -->
+        <path d="M 140 155 Q 140 140 145 135" stroke="#f5f1e8" stroke-width="4" fill="none" stroke-linecap="round"/>
+        
+        <!-- Phone cord from desk to hand -->
+        <path d="M 144 135 Q 148 100 155 70" stroke="#f5f1e8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </svg>
     </div>
     <span class="nav-brand-name">AnsweredCall</span>
   </a>
@@ -176,7 +212,7 @@
       <p>For contractors who already get voicemails but need the details organized automatically. Caller name, phone, address, service needed, urgency, summary, and transcript are written to Google Sheets.</p>
       <span class="card-cta">See Voicemail-to-Sheet →</span>
     </a>
-    <a href="/phone-intake/" class="product-card product-card-amber">
+    <a href="/phone-intake/" class="product-card product-card-cream">
       <span class="card-badge">Live call intake</span>
       <h2>Phone Intake</h2>
       <p>For contractors who want incoming calls answered, qualified, summarized, and delivered for faster follow-up.</p>
@@ -202,8 +238,8 @@
     <h2 class="demo-headline">Need help choosing the right workflow?</h2>
     <p class="demo-copy">Start with Voicemail-to-Sheet if you already get voicemails and want the details logged automatically. Choose Phone Intake if you want calls answered, qualified, and delivered while you're on the job.</p>
     <div class="choose-buttons">
-      <a href="/voicemail-to-sheet/" class="btn-choose btn-choose-green">See Voicemail-to-Sheet</a>
-      <a href="/phone-intake/" class="btn-choose btn-choose-amber">See Phone Intake</a>
+      <a href="/voicemail-to-sheet/" class="btn-choose btn-choose-teal">See Voicemail-to-Sheet</a>
+      <a href="/phone-intake/" class="btn-choose btn-choose-cream">See Phone Intake</a>
     </div>
     <p class="contact-line">Questions? Email <a href="mailto:sales@answeredcall.us">sales@answeredcall.us</a></p>
   </div>
