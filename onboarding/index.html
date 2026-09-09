@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complete Your Setup — AnsweredCall</title>
+<style>
+  :root{
+    --ink:#1c1c1a;
+    --paper:#faf9f6;
+    --panel:#ffffff;
+    --line:#ddd9d0;
+    --muted:#6b6f66;
+    --teal:#2b5f5f;
+    --teal-dark:#1e4646;
+    --warn:#8a4b2a;
+    --radius:3px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    line-height:1.5;
+  }
+  header{
+    border-bottom:1px solid var(--line);
+    padding:28px 20px 24px;
+  }
+  header .wrap{max-width:680px;margin:0 auto;}
+  header h1{
+    font-family:Georgia,"Source Serif 4",serif;
+    font-size:28px;
+    font-weight:600;
+    margin:0 0 6px;
+    letter-spacing:-0.01em;
+  }
+  header p{
+    margin:0;
+    color:var(--muted);
+    font-size:15px;
+    max-width:52ch;
+  }
+  main{max-width:680px;margin:0 auto;padding:32px 20px 80px;}
+  section{margin-bottom:36px;}
+  section + section{
+    border-top:1px solid var(--line);
+    padding-top:32px;
+  }
+  h2{
+    font-family:Georgia,"Source Serif 4",serif;
+    font-size:19px;
+    font-weight:600;
+    margin:0 0 4px;
+  }
+  .section-note{
+    color:var(--muted);
+    font-size:13.5px;
+    margin:0 0 18px;
+  }
+  .field{margin-bottom:16px;}
+  label{
+    display:block;
+    font-size:13.5px;
+    font-weight:600;
+    margin-bottom:5px;
+  }
+  label .req{color:var(--warn);font-weight:600;}
+  label .hint{
+    display:block;
+    font-weight:400;
+    color:var(--muted);
+    font-size:12.5px;
+    margin-top:2px;
+  }
+  input[type=text],input[type=email],input[type=tel],textarea,select{
+    width:100%;
+    padding:9px 10px;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    font-size:14.5px;
+    font-family:inherit;
+    background:var(--panel);
+    color:var(--ink);
+  }
+  textarea{resize:vertical;min-height:64px;}
+  input:focus,textarea:focus,select:focus{
+    outline:2px solid var(--teal);
+    outline-offset:1px;
+    border-color:var(--teal);
+  }
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media (max-width:560px){.row2{grid-template-columns:1fr;}}
+  fieldset{border:none;padding:0;margin:0 0 16px;}
+  fieldset legend{
+    font-size:13.5px;
+    font-weight:600;
+    margin-bottom:6px;
+    padding:0;
+  }
+  .radio-row{display:flex;gap:18px;flex-wrap:wrap;}
+  .radio-opt{display:flex;align-items:center;gap:6px;font-size:14px;font-weight:400;}
+  .radio-opt input{width:auto;}
+
+  #summary-wrap{
+    display:none;
+    border-top:1px solid var(--line);
+    padding-top:28px;
+  }
+  #summary-wrap.show{display:block;}
+  #summary{
+    width:100%;
+    min-height:280px;
+    font-family:ui-monospace,"SF Mono",Consolas,monospace;
+    font-size:12.5px;
+    line-height:1.6;
+    white-space:pre;
+  }
+  .actions{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:16px;
+  }
+  button{
+    font-family:inherit;
+    font-size:14.5px;
+    font-weight:600;
+    padding:11px 18px;
+    border-radius:var(--radius);
+    border:1px solid transparent;
+    cursor:pointer;
+  }
+  .btn-primary{
+    background:var(--teal);
+    color:#fff;
+  }
+  .btn-primary:hover{background:var(--teal-dark);}
+  .btn-secondary{
+    background:var(--panel);
+    color:var(--ink);
+    border-color:var(--line);
+  }
+  .btn-secondary:hover{border-color:var(--teal);}
+  .status{
+    font-size:13px;
+    color:var(--teal-dark);
+    margin-top:10px;
+    display:none;
+  }
+  .status.show{display:block;}
+  .missing{
+    display:none;
+    background:#fbf1ea;
+    border:1px solid #e2b791;
+    color:var(--warn);
+    padding:12px 14px;
+    border-radius:var(--radius);
+    font-size:13.5px;
+    margin-bottom:20px;
+  }
+  .missing.show{display:block;}
+  .missing ul{margin:6px 0 0;padding-left:18px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Complete your setup</h1>
+    <p>You've paid for AnsweredCall. This form gives us what we need to build your assistant and turn on call answering. It takes about ten minutes, and someone reviews it by hand before anything goes live.</p>
+  </div>
+</header>
+
+<main>
+  <form id="onboard-form" novalidate>
+
+    <div class="missing" id="missing-box">
+      <strong>A few required fields are still empty.</strong>
+      <ul id="missing-list"></ul>
+    </div>
+
+    <section>
+      <h2>Business identity</h2>
+      <p class="section-note">Who you are and how we reach you.</p>
+
+      <div class="field"><label>Legal business name <span class="req">*</span></label>
+        <input type="text" name="legal_name" required></div>
+
+      <div class="field"><label>Public business name (what callers hear) <span class="req">*</span></label>
+        <input type="text" name="public_name" required></div>
+
+      <div class="row2">
+        <div class="field"><label>Primary owner or manager <span class="req">*</span></label>
+          <input type="text" name="owner_name" required></div>
+        <div class="field"><label>Billing contact name <span class="req">*</span></label>
+          <input type="text" name="billing_contact_name" required></div>
+      </div>
+
+      <div class="field"><label>Billing contact email <span class="req">*</span></label>
+        <input type="email" name="billing_contact_email" required></div>
+
+      <div class="row2">
+        <div class="field"><label>Primary email <span class="req">*</span></label>
+          <input type="email" name="primary_email" required></div>
+        <div class="field"><label>Primary mobile number <span class="req">*</span></label>
+          <input type="tel" name="primary_mobile" required></div>
+      </div>
+
+      <div class="field"><label>Website</label>
+        <input type="text" name="website"></div>
+
+      <div class="row2">
+        <div class="field"><label>Main business phone that will use missed-call forwarding <span class="req">*</span></label>
+          <input type="tel" name="main_phone" required></div>
+        <div class="field"><label>Current phone carrier and plan <span class="req">*</span></label>
+          <input type="text" name="carrier" required></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Call handling</h2>
+      <p class="section-note">What the assistant is allowed to say and do on your behalf.</p>
+
+      <div class="row2">
+        <div class="field"><label>Normal business hours and time zone <span class="req">*</span></label>
+          <input type="text" name="hours" required placeholder="e.g. Mon–Fri 8am–5pm CT"></div>
+        <div class="field"><label>Holiday or seasonal hours</label>
+          <input type="text" name="seasonal_hours"></div>
+      </div>
+
+      <div class="field"><label>Services the assistant may discuss <span class="req">*</span>
+        <span class="hint">List each service. This is what callers will hear offered.</span></label>
+        <textarea name="services_in" required></textarea></div>
+
+      <div class="field"><label>Services the assistant must decline or refer out</label>
+        <textarea name="services_out"></textarea></div>
+
+      <div class="field"><label>Cities, ZIP codes, or radius served <span class="req">*</span></label>
+        <input type="text" name="service_area" required></div>
+
+      <div class="field"><label>Minimum job size or other qualification rules</label>
+        <textarea name="qualification_rules"></textarea></div>
+
+      <div class="field"><label>After-hours policy <span class="req">*</span></label>
+        <textarea name="after_hours" required></textarea></div>
+
+      <div class="field"><label>Emergency and safety instructions <span class="req">*</span>
+        <span class="hint">Exact wording the assistant should use for urgent or unsafe situations.</span></label>
+        <textarea name="emergency_instructions" required></textarea></div>
+
+      <div class="field"><label>Situations that require immediate transfer</label>
+        <textarea name="transfer_situations"></textarea></div>
+
+      <div class="row2">
+        <div class="field"><label>Transfer destination</label>
+          <input type="tel" name="transfer_dest"></div>
+        <div class="field"><label>Backup transfer destination</label>
+          <input type="tel" name="transfer_backup"></div>
+      </div>
+
+      <div class="field"><label>Information to collect from every caller <span class="req">*</span>
+        <span class="hint">e.g. name, address, callback number, description of the issue</span></label>
+        <textarea name="caller_info" required></textarea></div>
+
+      <div class="field"><label>Preferred callback promise <span class="req">*</span></label>
+        <input type="text" name="callback_promise" required placeholder="e.g. within 15 minutes, or next business morning"></div>
+
+      <div class="row2">
+        <div class="field"><label>Languages supported</label>
+          <input type="text" name="languages" value="English"></div>
+        <div class="field"><label>Pricing statements the assistant may make</label>
+          <input type="text" name="pricing_ok"></div>
+      </div>
+
+      <div class="field"><label>Pricing statements the assistant must avoid</label>
+        <input type="text" name="pricing_avoid"></div>
+    </section>
+
+    <section>
+      <h2>Voice and disclosure approval</h2>
+      <p class="section-note">How the assistant introduces itself, and your jurisdiction's recording rules.</p>
+
+      <div class="row2">
+        <div class="field"><label>Approved assistant name</label>
+          <input type="text" name="assistant_name"></div>
+        <div class="field"><label>Preferred voice or tone</label>
+          <input type="text" name="voice_tone" placeholder="e.g. warm, brisk, formal"></div>
+      </div>
+
+      <div class="field"><label>Approved opening greeting <span class="req">*</span>
+        <span class="hint">Exact words the assistant should open every call with.</span></label>
+        <textarea name="greeting" required></textarea></div>
+
+      <fieldset>
+        <legend>Recording disclosure required for this business and caller geography <span class="req">*</span></legend>
+        <div class="radio-row">
+          <label class="radio-opt"><input type="radio" name="disclosure_required" value="Yes" required> Yes</label>
+          <label class="radio-opt"><input type="radio" name="disclosure_required" value="No"> No</label>
+          <label class="radio-opt"><input type="radio" name="disclosure_required" value="Unsure — needs confirmation"> Unsure</label>
+        </div>
+      </fieldset>
+
+      <div class="field"><label>Exact approved recording disclosure, if required</label>
+        <textarea name="disclosure_text"></textarea></div>
+
+      <fieldset>
+        <legend>Consent to store transcripts, summaries, caller details, and recordings <span class="req">*</span></legend>
+        <div class="radio-row">
+          <label class="radio-opt"><input type="radio" name="storage_consent" value="Yes, I consent" required> Yes, I consent</label>
+          <label class="radio-opt"><input type="radio" name="storage_consent" value="No"> No</label>
+        </div>
+      </fieldset>
+
+      <div class="field"><label>Retention or deletion requirements</label>
+        <input type="text" name="retention"></div>
+
+      <p class="section-note" style="margin-top:-4px;">You're responsible for confirming the recording and consent wording that applies to your callers and operating locations.</p>
+    </section>
+
+    <section>
+      <h2>Notifications</h2>
+      <p class="section-note">Where leads and alerts go after each call.</p>
+
+      <div class="row2">
+        <div class="field"><label>Discord workspace and private channel owner <span class="req">*</span></label>
+          <input type="text" name="discord_owner" required></div>
+        <div class="field"><label>People who should receive lead alerts <span class="req">*</span></label>
+          <input type="text" name="lead_recipients" required></div>
+      </div>
+
+      <div class="row2">
+        <div class="field"><label>People who should receive failure alerts</label>
+          <input type="text" name="failure_recipients"></div>
+        <div class="field"><label>Escalation order for urgent leads</label>
+          <input type="text" name="escalation_order"></div>
+      </div>
+
+      <div class="field"><label>Quiet hours, if any</label>
+        <input type="text" name="quiet_hours"></div>
+
+      <div class="field"><label>Who owns follow-up when a lead is marked PARTIAL_NEEDS_REVIEW <span class="req">*</span></label>
+        <input type="text" name="partial_owner" required></div>
+    </section>
+
+    <section>
+      <h2>Launch approval</h2>
+      <p class="section-note">Confirms you're ready for us to build and test against your live line.</p>
+
+      <div class="row2">
+        <div class="field"><label>Setup fee and monthly amount agreed</label>
+          <input type="text" name="fee_agreed"></div>
+        <div class="field"><label>Payment received</label>
+          <input type="text" name="payment_received" placeholder="date / method"></div>
+      </div>
+
+      <div class="row2">
+        <div class="field"><label>Customer-approved test window</label>
+          <input type="text" name="test_window"></div>
+        <div class="field"><label>Customer contact available during forwarding test</label>
+          <input type="text" name="test_contact"></div>
+      </div>
+
+      <fieldset>
+        <legend>Customer approves greeting and call-handling rules as written above</legend>
+        <div class="radio-row">
+          <label class="radio-opt"><input type="radio" name="approve_greeting" value="Yes"> Yes</label>
+          <label class="radio-opt"><input type="radio" name="approve_greeting" value="No, needs changes"> No, needs changes</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Customer approves production activation once acceptance tests pass</legend>
+        <div class="radio-row">
+          <label class="radio-opt"><input type="radio" name="approve_activation" value="Yes"> Yes</label>
+          <label class="radio-opt"><input type="radio" name="approve_activation" value="Not yet"> Not yet</label>
+        </div>
+      </fieldset>
+
+      <div class="row2">
+        <div class="field"><label>Preferred launch date</label>
+          <input type="text" name="launch_date"></div>
+        <div class="field"><label>7-day review date</label>
+          <input type="text" name="review_7day"></div>
+      </div>
+
+      <div class="field"><label>30-day review date</label>
+        <input type="text" name="review_30day"></div>
+    </section>
+
+    <section>
+      <h2>What happens next</h2>
+      <p class="section-note">Once you submit, here's the path to your line going live.</p>
+      <ol style="padding-left:20px;font-size:14.5px;color:var(--ink);">
+        <li style="margin-bottom:8px;">We review your answers and build your assistant's greeting and call-handling rules.</li>
+        <li style="margin-bottom:8px;">We send you a test call window to confirm the greeting, transfers, and emergency handling sound right.</li>
+        <li style="margin-bottom:8px;">You turn on call forwarding to the number we assign, and we run live acceptance tests.</li>
+        <li>Once every test passes, we activate your line for real callers.</li>
+      </ol>
+    </section>
+
+    <div class="actions">
+      <button type="submit" class="btn-primary">Review and submit</button>
+    </div>
+  </form>
+
+  <div id="summary-wrap">
+    <h2>Review before sending</h2>
+    <p class="section-note">This is what goes to AnsweredCall. Check it, then send it as an email or copy it if your mail app truncates long messages.</p>
+    <textarea id="summary" readonly></textarea>
+    <div class="actions">
+      <a id="mailto-link" href="#" class="btn-primary" style="text-decoration:none;display:inline-flex;align-items:center;">Send as email</a>
+      <button type="button" class="btn-secondary" id="copy-btn">Copy full details</button>
+      <button type="button" class="btn-secondary" id="edit-btn">Back to form</button>
+    </div>
+    <p class="status" id="copy-status">Copied. Paste this into your email to sales@answeredcall.us if the email draft looks cut off.</p>
+  </div>
+</main>
+
+<script>
+const form = document.getElementById('onboard-form');
+const summaryWrap = document.getElementById('summary-wrap');
+const summaryBox = document.getElementById('summary');
+const mailtoLink = document.getElementById('mailto-link');
+const missingBox = document.getElementById('missing-box');
+const missingList = document.getElementById('missing-list');
+const DEST = 'sales@answeredcall.us';
+
+const FIELD_LABELS = {
+  legal_name:'Legal business name', public_name:'Public business name', owner_name:'Primary owner or manager',
+  billing_contact_name:'Billing contact name', billing_contact_email:'Billing contact email',
+  primary_email:'Primary email', primary_mobile:'Primary mobile number',
+  website:'Website', main_phone:'Main business phone (forwarding target)', carrier:'Current phone carrier and plan',
+  hours:'Normal business hours and time zone', seasonal_hours:'Holiday or seasonal hours',
+  services_in:'Services the assistant may discuss', services_out:'Services the assistant must decline or refer out',
+  service_area:'Cities, ZIP codes, or radius served', qualification_rules:'Minimum job size / qualification rules',
+  after_hours:'After-hours policy', emergency_instructions:'Emergency and safety instructions',
+  transfer_situations:'Situations requiring immediate transfer', transfer_dest:'Transfer destination',
+  transfer_backup:'Backup transfer destination', caller_info:'Information to collect from every caller',
+  callback_promise:'Preferred callback promise', languages:'Languages supported',
+  pricing_ok:'Pricing statements the assistant may make', pricing_avoid:'Pricing statements the assistant must avoid',
+  assistant_name:'Approved assistant name', voice_tone:'Preferred voice or tone', greeting:'Approved opening greeting',
+  disclosure_required:'Recording disclosure required', disclosure_text:'Exact approved recording disclosure',
+  storage_consent:'Consent to store transcripts/recordings', retention:'Retention or deletion requirements',
+  discord_owner:'Discord workspace and channel owner', lead_recipients:'Lead alert recipients',
+  failure_recipients:'Failure alert recipients', escalation_order:'Escalation order for urgent leads',
+  quiet_hours:'Quiet hours', partial_owner:'Owner of PARTIAL_NEEDS_REVIEW follow-up',
+  fee_agreed:'Setup fee and monthly amount agreed', payment_received:'Payment received',
+  test_window:'Customer-approved test window', test_contact:'Customer contact during forwarding test',
+  approve_greeting:'Approves greeting and call-handling rules', approve_activation:'Approves production activation',
+  launch_date:'Preferred launch date', review_7day:'7-day review date', review_30day:'30-day review date'
+};
+
+const SECTION_ORDER = [
+  ['Business identity', ['legal_name','public_name','owner_name','billing_contact_name','billing_contact_email','primary_email','primary_mobile','website','main_phone','carrier']],
+  ['Call handling', ['hours','seasonal_hours','services_in','services_out','service_area','qualification_rules','after_hours','emergency_instructions','transfer_situations','transfer_dest','transfer_backup','caller_info','callback_promise','languages','pricing_ok','pricing_avoid']],
+  ['Voice and disclosure approval', ['assistant_name','voice_tone','greeting','disclosure_required','disclosure_text','storage_consent','retention']],
+  ['Notifications', ['discord_owner','lead_recipients','failure_recipients','escalation_order','quiet_hours','partial_owner']],
+  ['Launch approval', ['fee_agreed','payment_received','test_window','test_contact','approve_greeting','approve_activation','launch_date','review_7day','review_30day']]
+];
+
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  const data = new FormData(form);
+
+  const missingFields = [];
+  form.querySelectorAll('[required]').forEach(el => {
+    if (el.type === 'radio') {
+      if (!form.querySelector(`input[name="${el.name}"]:checked`) && !missingFields.includes(FIELD_LABELS[el.name])) {
+        missingFields.push(FIELD_LABELS[el.name]);
+      }
+    } else if (!el.value.trim()) {
+      missingFields.push(FIELD_LABELS[el.name] || el.name);
+    }
+  });
+
+  if (missingFields.length) {
+    missingList.innerHTML = missingFields.map(f => `<li>${f}</li>`).join('');
+    missingBox.classList.add('show');
+    missingBox.scrollIntoView({behavior:'smooth', block:'start'});
+    return;
+  }
+  missingBox.classList.remove('show');
+
+  const businessName = data.get('public_name') || data.get('legal_name') || 'New customer';
+  let lines = [`AnsweredCall onboarding — ${businessName}`, ''];
+
+  SECTION_ORDER.forEach(([sectionTitle, fields]) => {
+    lines.push(`## ${sectionTitle}`);
+    fields.forEach(f => {
+      const val = (data.get(f) || '').toString().trim();
+      lines.push(`${FIELD_LABELS[f]}: ${val || '—'}`);
+    });
+    lines.push('');
+  });
+
+  const bodyText = lines.join('\n');
+  summaryBox.value = bodyText;
+
+  const subject = encodeURIComponent(`AnsweredCall onboarding — ${businessName}`);
+  const body = encodeURIComponent(bodyText);
+  mailtoLink.href = `mailto:${DEST}?subject=${subject}&body=${body}`;
+
+  form.style.display = 'none';
+  summaryWrap.classList.add('show');
+  summaryWrap.scrollIntoView({behavior:'smooth', block:'start'});
+});
+
+document.getElementById('copy-btn').addEventListener('click', function(){
+  navigator.clipboard.writeText(summaryBox.value).then(() => {
+    const status = document.getElementById('copy-status');
+    status.classList.add('show');
+    setTimeout(() => status.classList.remove('show'), 4000);
+  });
+});
+
+document.getElementById('edit-btn').addEventListener('click', function(){
+  summaryWrap.classList.remove('show');
+  form.style.display = 'block';
+  window.scrollTo({top:0, behavior:'smooth'});
+});
+</script>
+
+</body>
+</html>
