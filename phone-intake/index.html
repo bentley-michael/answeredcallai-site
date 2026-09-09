@@ -45,6 +45,8 @@
 
   html { scroll-behavior: smooth; }
 
+  section[id] { scroll-margin-top: 60px; }
+
   body {
     font-family: 'DM Sans', sans-serif;
     background: var(--white);
@@ -1402,15 +1404,6 @@
   </div>
 </div>
 
-<section style="padding: 2.5rem 2rem 0;">
-  <div class="section-inner">
-    <blockquote style="max-width: 860px; margin: 0 auto; background: var(--surface); border: 1px solid var(--border-light); border-radius: 16px; padding: 2rem; text-align: center; box-shadow: var(--shadow-soft);">
-      <p style="font-size: 20px; color: var(--text-dark); line-height: 1.7; margin-bottom: 1rem;">"A Knoxville crawlspace contractor captured 3 after-hours leads in his first week — two of which closed."</p>
-      <footer style="font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--teal);">— AnsweredCall Early Adopter, Tennessee</footer>
-    </blockquote>
-  </div>
-</section>
-
 <!-- EMAIL CAPTURE / DEMO NUMBER -->
 <section class="demo-capture-section" id="demo-form-section">
   <div class="section-inner">
@@ -1610,7 +1603,7 @@
       <div>
         <p class="tl-column-label">What it does</p>
         <ul class="tl-list">
-          <li>AI phone intake for crawlspace, foundation, water damage, fire and mold restoration, plumbing, HVAC, septic, sewer, and electrical contractors — trades where homeowners won't wait and will call the next number on the list.</li>
+          <li>AI phone intake for crawlspace, foundation, plumbing, HVAC, roofing, water damage, septic, sewer backup, drain cleaning, garage door repair, tree removal, and other urgent-service contractors.</li>
           <li>Answers missed and after-hours calls — no voicemail, no dead ends</li>
           <li>Captures homeowner name, phone, address, job type, urgency, and a full call summary</li>
           <li>Delivers lead details instantly by SMS, email, or Google Sheets</li>
@@ -1624,7 +1617,7 @@
           <li>$197 setup + $297/mo — or $497/mo flat (no setup fee)</li>
           <li>No long-term contract — cancel anytime</li>
           <li>30-day money-back guarantee</li>
-          <li>Demo available by phone — call or text to hear it live</li>
+          <li>Demo available by phone — call to hear it live</li>
         </ul>
       </div>
     </div>
@@ -1841,9 +1834,12 @@
               'Name: ' + payload.name + '\n'
             + 'Phone: ' + payload.phone + '\n'
             + 'Email: ' + payload.email + '\n'
-            + 'SMS Consent: Yes'
+            + 'SMS Consent: ' + (payload.smsConsent ? 'Yes' : 'No')
             );
-        onSuccess();
+        msg.textContent = 'Your email app should open. Send the email to complete your request.';
+        msg.className = 'lead-form-message is-success';
+        btn.disabled = false;
+        btn.textContent = 'Request Demo Info';
       }
     });
   }
