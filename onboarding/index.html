@@ -406,15 +406,16 @@
   </form>
 
   <div id="summary-wrap">
-    <h2>Review before sending</h2>
-    <p class="section-note">This is what goes to AnsweredCall. Check it, then send it as an email or copy it if your mail app truncates long messages.</p>
+    <h2>Review before submitting</h2>
+    <p class="section-note">Check your details, then submit them securely to AnsweredCall. You can also keep a copied backup.</p>
     <textarea id="summary" readonly></textarea>
     <div class="actions">
-      <a id="mailto-link" href="#" class="btn-primary" style="text-decoration:none;display:inline-flex;align-items:center;">Send as email</a>
+      <button type="button" class="btn-primary" id="submit-btn">Submit onboarding</button>
       <button type="button" class="btn-secondary" id="copy-btn">Copy full details</button>
       <button type="button" class="btn-secondary" id="edit-btn">Back to form</button>
     </div>
-    <p class="status" id="copy-status">Copied. Paste this into your email to answeredcall4@gmail.com if the email draft looks cut off.</p>
+    <p class="status" id="submit-status" aria-live="polite"></p>
+    <p class="status" id="copy-status">Copied. Keep these details as a backup.</p>
   </div>
 </main>
 
@@ -422,10 +423,9 @@
 const form = document.getElementById('onboard-form');
 const summaryWrap = document.getElementById('summary-wrap');
 const summaryBox = document.getElementById('summary');
-const mailtoLink = document.getElementById('mailto-link');
 const missingBox = document.getElementById('missing-box');
 const missingList = document.getElementById('missing-list');
-const DEST = 'answeredcall4@gmail.com';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mljeabyd';
 
 const FIELD_LABELS = {
   legal_name:'Legal business name', public_name:'Public business name', owner_name:'Primary owner or manager',
@@ -498,13 +498,41 @@ form.addEventListener('submit', function(e){
   const bodyText = lines.join('\n');
   summaryBox.value = bodyText;
 
-  const subject = encodeURIComponent(`AnsweredCall onboarding — ${businessName}`);
-  const body = encodeURIComponent(bodyText);
-  mailtoLink.href = `mailto:${DEST}?subject=${subject}&body=${body}`;
 
   form.style.display = 'none';
   summaryWrap.classList.add('show');
   summaryWrap.scrollIntoView({behavior:'smooth', block:'start'});
+});
+
+document.getElementById('submit-btn').addEventListener('click', async function(){
+  const button = this;
+  const status = document.getElementById('submit-status');
+  const data = new FormData(form);
+  const businessName = data.get('public_name') || data.get('legal_name') || 'New customer';
+  data.append('_subject', `AnsweredCall onboarding — ${businessName}`);
+
+  button.disabled = true;
+  button.textContent = 'Submitting…';
+  status.classList.remove('show');
+
+  try {
+    const response = await fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      headers: { Accept: 'application/json' },
+      body: data
+    });
+
+    if (!response.ok) throw new Error('Submission failed');
+
+    status.textContent = 'Thanks—your setup details were submitted. We’ll review them before activation.';
+    status.classList.add('show');
+    button.textContent = 'Submitted';
+  } catch (error) {
+    status.textContent = 'Your details were not submitted. Please try again or email answeredcall4@gmail.com.';
+    status.classList.add('show');
+    button.disabled = false;
+    button.textContent = 'Submit onboarding';
+  }
 });
 
 document.getElementById('copy-btn').addEventListener('click', function(){
