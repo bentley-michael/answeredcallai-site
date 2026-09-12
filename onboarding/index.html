@@ -255,7 +255,7 @@
 
       <div class="row2">
         <div class="field"><label>Transfer destination</label>
-          <input type="tel" name="transfer_dest"></div>
+          <input type="tel" name="transfer_dest" required></div>
         <div class="field"><label>Backup transfer destination</label>
           <input type="tel" name="transfer_backup"></div>
       </div>
@@ -269,7 +269,7 @@
 
       <div class="row2">
         <div class="field"><label>Languages supported</label>
-          <input type="text" name="languages" value="English"></div>
+          <input type="text" name="languages"></div>
         <div class="field"><label>Pricing statements the assistant may make</label>
           <input type="text" name="pricing_ok"></div>
       </div>
@@ -524,7 +524,7 @@ document.getElementById('submit-btn').addEventListener('click', async function()
 
     if (!response.ok) throw new Error('Submission failed');
 
-    status.textContent = 'Thanks—your setup details were submitted. We’ll review them before activation.';
+    status.textContent = 'Thanks, your setup details were submitted. We’ll review them before activation.';
     status.classList.add('show');
     button.textContent = 'Submitted';
   } catch (error) {
