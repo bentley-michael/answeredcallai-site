@@ -426,6 +426,8 @@ const summaryBox = document.getElementById('summary');
 const missingBox = document.getElementById('missing-box');
 const missingList = document.getElementById('missing-list');
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mljeabyd';
+const ONBOARDING_COMPLETE_WEBHOOK = 'https://n8n.answeredcall.us/webhook/onboarding-complete';
+const sessionId = new URLSearchParams(window.location.search).get('session_id') || '';
 
 const FIELD_LABELS = {
   legal_name:'Legal business name', public_name:'Public business name', owner_name:'Primary owner or manager',
@@ -510,6 +512,7 @@ document.getElementById('submit-btn').addEventListener('click', async function()
   const data = new FormData(form);
   const businessName = data.get('public_name') || data.get('legal_name') || 'New customer';
   data.append('_subject', `AnsweredCall onboarding — ${businessName}`);
+  if (sessionId) data.append('session_id', sessionId);
 
   button.disabled = true;
   button.textContent = 'Submitting…';
@@ -527,6 +530,14 @@ document.getElementById('submit-btn').addEventListener('click', async function()
     status.textContent = 'Thanks, your setup details were submitted. We’ll review them before activation.';
     status.classList.add('show');
     button.textContent = 'Submitted';
+
+    if (sessionId) {
+      fetch(ONBOARDING_COMPLETE_WEBHOOK, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ session_id: sessionId })
+      }).catch(() => {});
+    }
   } catch (error) {
     status.textContent = 'Your details were not submitted. Please try again or email sales@answeredcall.us.';
     status.classList.add('show');
