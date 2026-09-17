@@ -15,7 +15,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -50,8 +51,8 @@
   }
 
   .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .nav-logo { width: 40px; height: 40px; background: var(--teal); border-radius: 8px; display: flex; align-items: center; justify-content: center; padding: 4px; }
-  .nav-logo svg { width: 18px; height: 18px; fill: white; }
+  .nav-logo { width: 40px; height: 40px; flex-shrink: 0; }
+  .nav-logo img { width: 100%; height: 100%; display: block; object-fit: contain; }
   .nav-brand-name { font-weight: 600; font-size: 17px; color: var(--text-dark); letter-spacing: -0.3px; }
 
   .nav-right { display: flex; align-items: center; gap: 1.25rem; }
@@ -145,43 +146,7 @@
 <nav>
   <a href="/" class="nav-brand">
     <div class="nav-logo">
-      <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg" style="width: 32px; height: 32px;">
-        <!-- Desk -->
-        <rect x="30" y="160" width="140" height="25" fill="#f5f1e8"/>
-        
-        <!-- Chair back -->
-        <rect x="70" y="110" width="60" height="55" fill="#f5f1e8" rx="8"/>
-        
-        <!-- Torso -->
-        <rect x="75" y="85" width="50" height="50" fill="#f5f1e8" rx="5"/>
-        
-        <!-- Neck -->
-        <rect x="95" y="75" width="10" height="15" fill="#f5f1e8"/>
-        
-        <!-- Head -->
-        <circle cx="100" cy="60" r="18" fill="#f5f1e8"/>
-        
-        <!-- Left arm (on desk) -->
-        <path d="M 75 95 L 50 130 L 48 125 L 77 92 Z" fill="#f5f1e8"/>
-        
-        <!-- Right arm (holding phone) -->
-        <path d="M 125 95 L 150 85 L 152 92 L 128 100 Z" fill="#f5f1e8"/>
-        
-        <!-- Right forearm (more angled for phone to ear) -->
-        <path d="M 150 85 L 155 65 L 158 70 L 152 92 Z" fill="#f5f1e8"/>
-        
-        <!-- Phone handset at ear -->
-        <ellipse cx="158" cy="58" rx="6" ry="12" fill="#f5f1e8" transform="rotate(-30 158 58)"/>
-        
-        <!-- Desk phone base -->
-        <rect x="135" y="155" width="18" height="20" fill="#f5f1e8" rx="2"/>
-        
-        <!-- Desk phone receiver -->
-        <path d="M 140 155 Q 140 140 145 135" stroke="#f5f1e8" stroke-width="4" fill="none" stroke-linecap="round"/>
-        
-        <!-- Phone cord from desk to hand -->
-        <path d="M 144 135 Q 148 100 155 70" stroke="#f5f1e8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-      </svg>
+      <img src="/assets/answeredcall-mark.png" alt="" width="40" height="40">
     </div>
     <span class="nav-brand-name">AnsweredCall</span>
   </a>
