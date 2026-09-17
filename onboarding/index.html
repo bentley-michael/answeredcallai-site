@@ -534,10 +534,13 @@ document.getElementById('submit-btn').addEventListener('click', async function()
     button.textContent = 'Submitted';
 
     if (sessionId) {
+      const payload = Object.fromEntries(data.entries());
+      delete payload._subject;
+      payload.session_id = sessionId;
       fetch(ONBOARDING_COMPLETE_WEBHOOK, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ session_id: sessionId })
+        body: JSON.stringify(payload)
       }).catch(() => {});
     }
   } catch (error) {
