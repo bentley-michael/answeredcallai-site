@@ -3,114 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AnsweredCall answers every contractor call, qualifies every lead, and delivers the full intake instantly — name, phone, address, job type, urgency, and transcript." />
+  <meta name="description" content="AnsweredCall helps contractors handle calls they cannot answer, collect lead details and urgency, and automatically receive intake records." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="AnsweredCall | 24/7 Receptionist" />
-  <meta property="og:description" content="Every call answered. Every lead captured. Built for contractors who can't afford a missed call." />
+  <meta property="og:title" content="AnsweredCall | After-Hours Receptionist" />
+  <meta property="og:description" content="Capture more of the calls you can't answer. AI voice intake built for service businesses." />
   <meta property="og:url" content="https://answeredcall.us/phone-intake" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="AnsweredCall | 24/7 Receptionist" />
-  <meta name="twitter:description" content="Every call answered. Every lead captured. Built for contractors who can't afford a missed call." />
-  <title>AnsweredCall | 24/7 Receptionist</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta name="twitter:title" content="AnsweredCall | After-Hours Receptionist" />
+  <meta name="twitter:description" content="Capture more of the calls you can't answer. AI voice intake built for service businesses." />
+  <title>AnsweredCall | After-Hours Receptionist</title>
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  .phone-intake-page *, .phone-intake-page *::before, .phone-intake-page *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --white: #faf6ef;
-    --off-white: #f3ecdd;
-    --light: #f5f1e8;
-    --border: #e3d5b8;
-    --border-dark: #d4c4b0;
-    --teal: #2d5a6f;
-    --teal-light: #467489;
-    --teal-dark: #1f4456;
-    --cream: #f5f1e8;
-    --cream-dark: #e3d5b8;
-    --text-dark: #221b12;
-    --text-secondary: #6b5f4d;
-    --text-muted: #7b7368;
-    --border-light: #e3d5b8;
-    --surface: #faf6ef;
-    --surface-muted: #f3ecdd;
-    --shadow-soft: 0 18px 42px rgba(45, 90, 111, 0.08);
-    --dark: #f3ecdd;
-    --muted: #666666;
-    --muted-light: #666666;
-    --text: #1a1a1a;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  section[id] { scroll-margin-top: 60px; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--white);
-    color: var(--text-dark);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* NAV */
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    padding: 0 2rem;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .nav-brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-  }
-
-  .nav-logo {
-    width: 32px;
-    height: 32px;
-    flex-shrink: 0;
-  }
-
-  .nav-logo img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: contain;
-  }
-
-  .nav-brand-name {
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 600;
-    font-size: 17px;
-    color: var(--text-dark);
-    letter-spacing: -0.3px;
-  }
-
-  .nav-cta {
-    background: var(--teal);
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 8px 18px;
-    border-radius: 6px;
-    transition: background 0.15s;
-  }
-
-  .nav-cta:hover { background: var(--teal-dark); }
+  .phone-intake-page section[id] { scroll-margin-top: 82px; }
 
   /* HERO */
   .hero {
@@ -155,7 +62,7 @@
   }
 
   .hero-eyebrow {
-    font-family: 'DM Mono', monospace;
+    font-family: var(--mono);
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 2px;
@@ -176,7 +83,7 @@
   }
 
   .hero-headline {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--sans);
     font-size: clamp(52px, 7vw, 84px);
     line-height: 0.95;
     letter-spacing: 1px;
@@ -261,7 +168,7 @@
     font-size: 13px;
     color: var(--muted);
     margin: 6px 0 4px;
-    font-family: 'DM Sans', sans-serif;
+    font-family: var(--sans);
     font-weight: 400;
     letter-spacing: 0.01em;
   }
@@ -322,7 +229,7 @@
   }
 
   .card-label {
-    font-family: 'DM Mono', monospace;
+    font-family: var(--mono);
     font-size: 10px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -377,7 +284,7 @@
     padding: 4px 10px;
     border-radius: 999px;
     border: 1px solid;
-    font-family: 'DM Mono', monospace;
+    font-family: var(--mono);
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.8px;
@@ -421,7 +328,7 @@
   }
 
   .stat-number {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--sans);
     font-size: 48px;
     color: var(--teal);
     line-height: 1;
@@ -445,7 +352,7 @@
   }
 
   .section-eyebrow {
-    font-family: 'DM Mono', monospace;
+    font-family: var(--mono);
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -465,7 +372,7 @@
   }
 
   .section-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--sans);
     font-size: clamp(36px, 5vw, 56px);
     line-height: 1;
     color: var(--text-dark);
@@ -499,7 +406,7 @@
   }
 
   .step-number {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--sans);
     font-size: 64px;
     color: var(--border-light);
     line-height: 1;
@@ -508,7 +415,7 @@
   }
 
   .step-title {
-    font-family: 'DM Sans', sans-serif;
+    font-family: var(--sans);
     font-size: 18px;
     font-weight: 600;
     color: var(--text-dark);
@@ -525,7 +432,7 @@
   .step-tag {
     display: inline-block;
     margin-top: 1.25rem;
-    font-family: 'DM Mono', monospace;
+    font-family: var(--mono);
     font-size: 10px;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -600,7 +507,7 @@
   }
 
   .pricing-plan-name {
-    font-family: 'DM Mono', monospace;
+    font-family: var(--mono);
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -616,14 +523,14 @@
   }
 
   .price-dollar {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--sans);
     font-size: 22px;
     color: var(--muted-light);
     margin-bottom: 10px;
   }
 
   .price-amount {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--sans);
     font-size: 72px;
     color: var(--text-dark);
     line-height: 1;
@@ -744,7 +651,7 @@
     color: var(--teal);
     opacity: 0;
     transition: opacity 0.3s;
-    font-family: 'DM Mono', monospace;
+    font-family: var(--mono);
   }
   .copy-toast.show { opacity: 1; }
 
@@ -772,131 +679,6 @@
 
   .pricing-secondary-cta:hover { color: var(--teal-dark); }
 
-  /* FOOTER */
-  footer {
-    background: var(--off-white);
-    border-top: 1px solid var(--border);
-    padding: 3.5rem 2rem 2rem;
-  }
-
-  .footer-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .footer-top {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 3rem;
-    padding-bottom: 2.5rem;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 2rem;
-  }
-
-  .footer-brand-name {
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 600;
-    font-size: 17px;
-    color: var(--text-dark);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 0.75rem;
-  }
-
-  .footer-logo {
-    width: 28px;
-    height: 28px;
-    flex-shrink: 0;
-  }
-
-  .footer-logo img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: contain;
-  }
-
-  .footer-tagline {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.6;
-    margin-bottom: 0.5rem;
-  }
-
-  .footer-built-by {
-    font-size: 12px;
-    color: var(--border-light);
-  }
-
-  .footer-nav-title {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 1rem;
-  }
-
-  .footer-links {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .footer-links a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.15s;
-  }
-
-  .footer-links a:hover { color: var(--text-dark); }
-
-  .footer-contact-title {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 1rem;
-  }
-
-  .footer-contact-email {
-    color: var(--teal);
-    text-decoration: none;
-    font-size: 14px;
-    display: inline-block;
-  }
-
-  .footer-contact-email:hover { text-decoration: underline; }
-
-  .footer-contact-row {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0;
-    margin-bottom: 8px;
-  }
-
-  .footer-contact-row .copy-toast {
-    margin-left: 8px;
-  }
-
-  .footer-contact-service {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.6;
-  }
-
-  .footer-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 12px;
-    color: var(--border-light);
-  }
 
   /* RESPONSIVE */
   @media (max-width: 900px) {
@@ -918,19 +700,13 @@
 
     .stat-number { font-size: 36px; }
 
-    .footer-top {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
   }
 
   @media (max-width: 600px) {
-    nav { padding: 0 1rem; }
     .hero { padding: 3rem 1rem; }
     section { padding: 3.5rem 1rem; }
     .stats-inner { grid-template-columns: 1fr; text-align: left; }
     .hero-trust { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
-    .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
     .legal-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
   }
 
@@ -949,7 +725,7 @@
   }
 
   .demo-capture-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--sans);
     font-size: clamp(30px, 4vw, 44px);
     color: var(--text-dark);
     line-height: 1.05;
@@ -973,139 +749,10 @@
     font-weight: 300;
   }
 
-  .lead-form {
-    display: grid;
-    gap: 14px;
-  }
-
-  .lead-form-field {
-    display: grid;
-    gap: 6px;
-  }
-
-  .lead-form-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--teal);
-  }
-
-  .lead-form input {
-    width: 100%;
-    background: var(--white);
-    border: 1px solid var(--border-light);
-    border-radius: 8px;
-    padding: 14px 16px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    color: var(--text-dark);
-    outline: none;
-    transition: border-color 0.15s, box-shadow 0.15s;
-  }
-
-  .lead-form input::placeholder {
-    color: var(--muted);
-  }
-
-  .lead-form input:focus {
-    border-color: var(--teal);
-    box-shadow: 0 0 0 3px rgba(45, 90, 111, 0.15);
-  }
-
-  .lead-form-submit {
-    width: 100%;
-    background: var(--teal);
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 15px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.15s, transform 0.15s, opacity 0.15s;
-  }
-
-  .lead-form-submit:hover:not(:disabled) {
-    background: var(--teal-dark);
-    transform: translateY(-1px);
-  }
-
-  .lead-form-submit:disabled {
-    cursor: wait;
-    opacity: 0.8;
-    transform: none;
-  }
-
-  .lead-form-message {
-    min-height: 24px;
-    font-size: 14px;
-    line-height: 1.5;
-  }
-
-  .lead-form-message.is-success {
-    color: var(--teal);
-  }
-
-  .lead-form-message.is-error {
-    color: #9b3c38;
-  }
-
-  .demo-fields {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 12px;
-  }
-
-  .demo-fields input {
-    flex: 1;
-    background: var(--dark);
-    border: 1px solid var(--border-light);
-    border-radius: 8px;
-    padding: 13px 16px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    color: var(--text-dark);
-    outline: none;
-    transition: border-color 0.15s;
-  }
-
-  .demo-fields input::placeholder { color: var(--muted); }
-
-  .demo-fields input:focus { border-color: var(--teal); }
-
-  .btn-demo-submit {
-    width: 100%;
-    background: var(--teal);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 15px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.15s;
-    letter-spacing: -0.2px;
-  }
-
-  .btn-demo-submit:hover {
-    background: var(--teal-dark);
-    transform: translateY(-1px);
-  }
-
-  .demo-instruction {
-    font-size: 15px;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 1.25rem;
-    font-weight: 300;
-  }
 
   .demo-phone-number {
     display: inline-block;
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--sans);
     font-size: clamp(42px, 8vw, 64px);
     color: var(--teal);
     text-decoration: none;
@@ -1120,33 +767,6 @@
     .demo-fields { flex-direction: column; }
   }
 
-  .sms-consent {
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-    cursor: pointer;
-    font-size: 13px;
-    color: var(--text-secondary);
-    line-height: 1.6;
-  }
-
-  .sms-consent input[type="checkbox"] {
-    margin-top: 3px;
-    flex-shrink: 0;
-    accent-color: var(--teal);
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-  }
-
-  .sms-disclosure {
-    font-size: 12px;
-    color: var(--muted);
-    line-height: 1.6;
-    border-top: 1px solid var(--border);
-    padding-top: 10px;
-    margin-top: 4px;
-  }
 
   /* ANIMATIONS */
   @keyframes fadeUp {
@@ -1174,7 +794,7 @@
   }
 
   .tl-eyebrow {
-    font-family: 'DM Mono', monospace;
+    font-family: var(--mono);
     font-size: 11px;
     letter-spacing: 1.8px;
     text-transform: uppercase;
@@ -1183,7 +803,7 @@
   }
 
   .tl-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--sans);
     font-size: clamp(36px, 5vw, 56px);
     line-height: 1;
     color: var(--text-dark);
@@ -1197,7 +817,7 @@
   }
 
   .tl-column-label {
-    font-family: 'DM Mono', monospace;
+    font-family: var(--mono);
     font-size: 11px;
     letter-spacing: 1.4px;
     text-transform: uppercase;
@@ -1214,7 +834,7 @@
   .tl-list li {
     position: relative;
     padding-left: 1.1rem;
-    font-family: 'DM Sans', sans-serif;
+    font-family: var(--sans);
     font-size: 15px;
     line-height: 1.7;
     color: var(--text-secondary);
@@ -1240,7 +860,7 @@
   }
 
   .tl-fit-label {
-    font-family: 'DM Mono', monospace;
+    font-family: var(--mono);
     font-size: 11px;
     letter-spacing: 1.4px;
     text-transform: uppercase;
@@ -1269,47 +889,42 @@
     }
   }
 </style>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
 </head>
-<body>
-
-<a class="skip-link" href="#main" style="position:absolute;left:-9999px;top:0;background:var(--teal);color:white;padding:8px 16px;z-index:9999;border-radius:0 0 6px 0;font-size:14px;">Skip to content</a>
-
-<!-- NAV -->
-<nav>
-  <a href="/" class="nav-brand">
-    <div class="nav-logo">
-      <img src="/assets/answeredcall-mark.png" alt="" width="32" height="32">
-    </div>
-    <span class="nav-brand-name">AnsweredCall</span>
-  </a>
-  <a href="#demo-form-section" class="nav-cta">Call the Demo Now</a>
-</nav>
+<body class="site-page phone-intake-page">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="shell nav-wrap">
+  <a href="/" class="brand" aria-label="AnsweredCall home"><img src="/assets/answeredcall-mark.png" alt="" width="34" height="34"><span>AnsweredCall</span></a>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Open navigation</span><span></span><span></span></button>
+  <nav class="site-nav" id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/phone-intake/">After-Hours Receptionist</a><a href="/onboarding/">Customer setup</a><a class="nav-action" href="mailto:sales@answeredcall.us">Contact</a></nav>
+</div></header>
 
 <!-- HERO -->
 <main id="main">
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-content">
-      <p class="hero-eyebrow">Your 24/7 AI Receptionist</p>
+      <p class="hero-eyebrow">Your After-Hours AI Receptionist</p>
       <h1 class="hero-headline">
-        Every Missed Call<br>
-        <span class="accent">Is a Job You<br>Didn't Get</span>
+        A Missed Call<br>
+        <span class="accent">Can Become<br>a Missed Job</span>
       </h1>
       <p class="hero-sub">
-        You're on a job. Your phone rings. No one answers. <strong>That homeowner calls your competitor.</strong>
-        AnsweredCall answers every call, qualifies every lead, and delivers it straight to you — 24 hours a day.
+        You're on a job. Your phone rings. No one answers. <strong>That homeowner may call your competitor.</strong>
+        AnsweredCall helps handle calls you cannot answer, collects lead details and urgency, and automatically sends the intake to your configured destinations.
       </p>
       <div class="hero-cta-group">
         <a href="#demo-form-section" class="btn-primary cta-button">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
           Call the Demo Now
         </a>
-        <p class="cta-subtext">Takes 30 seconds. See exactly how it handles your calls.</p>
+        <p class="cta-subtext">Call to hear the intake in action.</p>
       </div>
       <div class="hero-trust">
         <div class="trust-item">
           <div class="trust-check"></div>
-          30-day guarantee
+          Test before activation
         </div>
         <div class="trust-item">
           <div class="trust-check"></div>
@@ -1327,7 +942,7 @@
         <div class="card-feature-dot"></div>
         <div class="card-feature-text">
           <strong>Homeowner name + phone</strong>
-          Every caller logged, no exceptions
+          Caller details collected during intake
         </div>
       </div>
       <div class="card-feature">
@@ -1352,7 +967,7 @@
       <div class="card-feature">
         <div class="card-feature-dot"></div>
         <div class="card-feature-text">
-          <strong>Delivered instantly</strong>
+          <strong>Delivered automatically</strong>
           SMS, email, or Google Sheets — your choice
         </div>
       </div>
@@ -1360,7 +975,7 @@
         <div class="card-feature-dot"></div>
         <div class="card-feature-text">
           <strong>Call recording + transcript</strong>
-          Full record, no he-said-she-said
+          A record to support your follow-up
         </div>
       </div>
     </div>
@@ -1371,16 +986,16 @@
 <div class="stats-bar">
   <div class="stats-inner">
     <div>
-      <div class="stat-number">$4,200</div>
-      <div class="stat-label">Average crawlspace encapsulation job</div>
+      <div class="stat-number">Lead intake</div>
+      <div class="stat-label">A missed call can represent a real sales opportunity</div>
     </div>
     <div>
-      <div class="stat-number">24/7</div>
-      <div class="stat-label">Calls answered — nights, weekends, always</div>
+      <div class="stat-number">After hours</div>
+      <div class="stat-label">Intake for after-hours calls</div>
     </div>
     <div>
-      <div class="stat-number">&lt; 2s</div>
-      <div class="stat-label">Average answer time</div>
+      <div class="stat-number">AI voice</div>
+      <div class="stat-label">Configured for your intake questions</div>
     </div>
   </div>
 </div>
@@ -1393,7 +1008,7 @@
       <h2 class="demo-capture-title">Try It Right Now — Call the Demo</h2>
       <!-- FORM HERE -->
       <div class="lead-form-card" id="demo">
-        <p class="lead-form-copy">Call this number right now. Act like a homeowner with a wet crawlspace. Hear exactly what your customers will hear — 24/7, live.</p>
+        <p class="lead-form-copy">Call this number right now. Act like a homeowner with a wet crawlspace. Hear an example of AI voice intake, live.</p>
         <div style="text-align:center; padding: 1.5rem 0 1rem;">
           <a href="tel:+19125560216" class="demo-phone-number">+1 (912) 556-0216</a>
         </div>
@@ -1415,20 +1030,20 @@
       <div class="how-step">
         <span class="step-number">01</span>
         <div class="step-title">Homeowner calls</div>
-        <p class="step-body">Your dedicated AnsweredCall number picks up in under 2 seconds. A professional AI agent greets them by your company name and takes over.</p>
-        <span class="step-tag">Always on</span>
+        <p class="step-body">When you cannot answer, missed-call forwarding can send the caller to your AnsweredCall intake flow. The AI agent uses your approved greeting and questions.</p>
+        <span class="step-tag">Missed-call intake</span>
       </div>
       <div class="how-step">
         <span class="step-number">02</span>
         <div class="step-title">Lead is qualified</div>
-        <p class="step-body">The agent collects name, phone, address, issue description, and urgency. Emergency situations like active flooding are flagged and routed immediately.</p>
+        <p class="step-body">The agent collects name, phone, address, issue description, and urgency. Urgent issues such as active flooding are flagged and routed according to your configured rules.</p>
         <span class="step-tag">Custom to your services</span>
       </div>
       <div class="how-step">
         <span class="step-number">03</span>
         <div class="step-title">You get the lead</div>
-        <p class="step-body">Full lead details delivered instantly by SMS or email. Call recording and transcript saved automatically. You follow up when you're ready.</p>
-        <span class="step-tag">Instant delivery</span>
+        <p class="step-body">Lead details are automatically sent to your configured destinations after intake. Recordings and transcripts support your team's follow-up.</p>
+        <span class="step-tag">Automatic delivery</span>
       </div>
     </div>
   </div>
@@ -1461,11 +1076,11 @@
     <div class="pricing-header">
       <p class="section-eyebrow" style="justify-content: center;">Pricing</p>
       <h2 class="section-title">One plan. No surprises.</h2>
-      <p class="section-sub" style="margin: 0 auto; text-align: center;">Flat rate built for owner-operated contractors. Start capturing missed jobs immediately.</p>
+      <p class="section-sub" style="margin: 0 auto; text-align: center;">Flat rate built for owner-operated contractors. Intake is configured and tested before activation.</p>
     </div>
     <div class="pricing-card">
       <div class="pricing-card-header">
-        <p class="pricing-plan-name">24/7 AI Receptionist</p>
+        <p class="pricing-plan-name">After-Hours AI Receptionist</p>
         <div class="pricing-price">
           <span class="price-dollar">$</span>
           <span class="price-amount">197</span>
@@ -1476,7 +1091,7 @@
       <div class="pricing-features">
         <div class="pricing-feature">
           <div class="feature-check"></div>
-          <span class="feature-text"><strong>24/7 AI call answering</strong> — nights, weekends, on-site, always</span>
+          <span class="feature-text"><strong>After-hours and missed-call coverage</strong> — for calls you cannot answer</span>
         </div>
         <div class="pricing-feature">
           <div class="feature-check"></div>
@@ -1484,19 +1099,19 @@
         </div>
         <div class="pricing-feature">
           <div class="feature-check"></div>
-          <span class="feature-text"><strong>Emergency routing</strong> — flooding, active water intrusion flagged immediately</span>
+          <span class="feature-text"><strong>Emergency routing</strong> — urgent issues flagged using your configured rules</span>
         </div>
         <div class="pricing-feature">
           <div class="feature-check"></div>
-          <span class="feature-text"><strong>Spam call filtering</strong> — no junk in your lead list</span>
+          <span class="feature-text"><strong>Structured lead details</strong> — organized for your team</span>
         </div>
         <div class="pricing-feature">
           <div class="feature-check"></div>
-          <span class="feature-text"><strong>Instant lead delivery</strong> — SMS, email, or Google Sheets</span>
+          <span class="feature-text"><strong>Automatic lead delivery</strong> — SMS, email, or Google Sheets</span>
         </div>
         <div class="pricing-feature">
           <div class="feature-check"></div>
-          <span class="feature-text"><strong>Call recording + transcript</strong> — every conversation saved</span>
+          <span class="feature-text"><strong>Call recording + transcript</strong> — records to support follow-up</span>
         </div>
         <div class="pricing-feature">
           <div class="feature-check"></div>
@@ -1517,12 +1132,12 @@
         <a href="https://buy.stripe.com/5kQ9AS1Ym6HbcQu2I77kc0b" target="_blank" rel="noopener" class="pricing-secondary-cta">
           Already decided? Get set up now →
         </a>
-        <a href="../onboarding/" class="pricing-secondary-cta">Already paid? Complete your setup →</a>
+        <a href="/onboarding/" class="pricing-secondary-cta">Already paid? Complete your setup →</a>
       </div>
     </div>
     <p class="pricing-guarantee">
       <span style="color: var(--teal);">✓</span>
-      30-day money-back guarantee &nbsp;·&nbsp; No long-term contract
+      No long-term contract
     </p>
   </div>
 </section>
@@ -1531,23 +1146,23 @@
 <section style="background: var(--off-white); border-top: 1px solid var(--border); padding: 4rem 2rem;">
   <div class="section-inner legal-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem;">
     <article id="privacy">
-      <p style="font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem;">Privacy Policy</p>
+      <p style="font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem;">Privacy Policy</p>
       <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.75rem;">AnsweredCall collects caller details strictly to qualify leads, route urgent issues, and deliver call information to the contractor using the system.</p>
       <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">Information is used for intake operations and service delivery only and is not sold to unrelated third parties.</p>
     </article>
     <article id="terms">
-      <p style="font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem;">Terms of Service</p>
+      <p style="font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem;">Terms of Service</p>
       <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.75rem;">Service includes AI-powered phone intake, message routing, and lead delivery configured for your crawlspace business.</p>
-      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">Plans are billed monthly, include a one-time setup fee, and may be canceled without a long-term contract commitment.</p>
+      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">The plan is $197/month with no setup fee and may be canceled without a long-term contract commitment.</p>
     </article>
     <article id="contact">
-      <p style="font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem;">Contact</p>
+      <p style="font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem;">Contact</p>
       <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.5rem;"><strong style="color: var(--text-dark);">AnsweredCall</strong></p>
       <p style="font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 0.75rem;">AI phone intake and missed-call response system for contractors</p>
       <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.5rem;">Sales: <a href="#" class="copy-email" data-email="sales@answeredcall.us" style="color: var(--teal); text-decoration: none;">sales@answeredcall.us</a><span class="copy-toast">copied</span></p>
       <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.5rem;">Business: <a href="mailto:sales@answeredcall.us" style="color: var(--teal); text-decoration: none;">sales@answeredcall.us</a></p>
       <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.75rem;">Website: <a href="https://answeredcall.us" style="color: var(--teal); text-decoration: none;">https://answeredcall.us</a></p>
-      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">Serving urgent-service contractors across Tennessee and beyond.</p>
+      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">Designed for lead-driven service businesses.</p>
     </article>
   </div>
 </section>
@@ -1562,9 +1177,9 @@
         <p class="tl-column-label">What it does</p>
         <ul class="tl-list">
           <li>AI phone intake for crawlspace, foundation, plumbing, HVAC, roofing, water damage, septic, sewer backup, drain cleaning, garage door repair, tree removal, and other urgent-service contractors.</li>
-          <li>Answers missed and after-hours calls — no voicemail, no dead ends</li>
+          <li>Provides AI voice intake for calls forwarded when you cannot answer</li>
           <li>Captures homeowner name, phone, address, job type, urgency, and a full call summary</li>
-          <li>Delivers lead details instantly by SMS, email, or Google Sheets</li>
+          <li>Automatically sends lead details to configured SMS, email, or Google Sheets destinations after intake</li>
           <li>Flags emergency and high-priority calls so you know what to call back first</li>
         </ul>
       </div>
@@ -1574,7 +1189,7 @@
         <ul class="tl-list">
           <li>$197/mo — no setup fee</li>
           <li>No long-term contract — cancel anytime</li>
-          <li>30-day money-back guarantee</li>
+          <li>Intake tested before activation</li>
           <li>Demo available by phone — call to hear it live</li>
         </ul>
       </div>
@@ -1586,7 +1201,7 @@
         <ul class="tl-list">
           <li>Contractors who miss calls while on the job</li>
           <li>Businesses that run emergency or urgent service calls</li>
-          <li>Owners who want leads texted the moment they come in</li>
+          <li>Owners who want lead details sent by SMS after intake</li>
         </ul>
       </div>
 
@@ -1604,47 +1219,9 @@
 </main>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div>
-        <div class="footer-brand-name">
-          <div class="footer-logo">
-            <img src="/assets/answeredcall-mark.png" alt="" width="28" height="28">
-          </div>
-          AnsweredCall
-        </div>
-        <p class="footer-tagline">Never miss an urgent service call again.</p>
-        <p class="footer-built-by">Built by Nathan Bentley</p>
-      </div>
-      <div>
-        <p class="footer-nav-title">Links</p>
-        <ul class="footer-links">
-          <li><a href="/privacy-policy/">Privacy Policy</a></li>
-          <li><a href="/terms/">Terms of Service</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="footer-contact-title">Get in touch</p>
-        <div class="footer-contact-row">
-          <a href="#" class="footer-contact-email copy-email" data-email="sales@answeredcall.us">sales@answeredcall.us</a>
-          <span class="copy-toast">copied</span>
-        </div>
-        <div class="footer-contact-row" style="margin-top: 0.4rem;">
-          <a href="mailto:sales@answeredcall.us" class="footer-contact-email">sales@answeredcall.us</a>
-        </div>
-        <p class="footer-contact-service">Serving urgent-service contractors across Tennessee and beyond.</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Nathan Bentley. All rights reserved.</span>
-      <span>AnsweredCall — Every call answered. Every lead captured.</span>
-    </div>
-  </div>
-</footer>
+<footer class="site-footer"><div class="shell footer-grid"><div class="footer-brand"><a href="/" class="brand"><img src="/assets/answeredcall-mark.png" alt="" width="32" height="32"><span>AnsweredCall</span></a><p>Missed-call lead intake for service businesses.</p></div><div class="footer-links"><a href="/">AnsweredCall home</a><a href="/phone-intake/">After-Hours Receptionist</a><a href="/onboarding/">Customer setup</a><a href="mailto:sales@answeredcall.us">Contact</a></div><div class="footer-links"><a href="/privacy-policy/">Privacy</a><a href="/terms/">Terms</a></div><p class="footer-legal">© 2026 Nathan Bentley. All rights reserved.</p></div></footer>
 
-<script src="../script.js"></script>
+<script src="/script.js"></script>
 <script>
   function showCopyToast(el) {
     var toast = el.parentElement && el.parentElement.querySelector('.copy-toast');

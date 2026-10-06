@@ -1,3 +1,14 @@
+const menuButton = document.querySelector('.menu-toggle');
+const siteNav = document.querySelector('.site-nav');
+
+if (menuButton && siteNav) {
+  menuButton.addEventListener('click', () => {
+    const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+    menuButton.setAttribute('aria-expanded', String(!isOpen));
+    siteNav.classList.toggle('is-open', !isOpen);
+  });
+}
+
 const anchorLinks = document.querySelectorAll('a[href^="#"]');
 
 anchorLinks.forEach((link) => {
@@ -15,6 +26,9 @@ anchorLinks.forEach((link) => {
     }
 
     event.preventDefault();
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    target.scrollIntoView({
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+      block: 'start'
+    });
   });
 });

@@ -5,7 +5,7 @@ One-page landing site for an AI Phone Intake & Lead Generation service built on 
 ## Project Structure
 
 - index.html
-- styles.css
+- assets/css/site.css
 - script.js
 
 ## Pre-Launch Checklist
@@ -58,7 +58,7 @@ Then visit `http://localhost:8000/phone-intake-landing/` or the URL shown by you
 ## Basic Customization
 
 - Branding: update the company name, tagline, and footer info in index.html.
-- Colors: edit CSS variables at the top of styles.css.
+- Colors: edit CSS variables at the top of assets/css/site.css.
 - Copy: adjust headlines, guarantees, and pricing text to match your offer.
 - Media: swap LOOM_VIDEO_URL with your demo video link.
 - Favicon: Create a 32x32px PNG with your logo/initials and save as favicon.png in the same directory.

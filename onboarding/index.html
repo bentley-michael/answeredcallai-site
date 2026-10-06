@@ -6,176 +6,26 @@
 <title>Complete Your Setup — AnsweredCall</title>
 <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<style>
-  :root{
-    --ink:#1c1c1a;
-    --paper:#faf9f6;
-    --panel:#ffffff;
-    --line:#ddd9d0;
-    --muted:#6b6f66;
-    --teal:#2b5f5f;
-    --teal-dark:#1e4646;
-    --warn:#8a4b2a;
-    --radius:3px;
-  }
-  *{box-sizing:border-box;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-    line-height:1.5;
-  }
-  header{
-    border-bottom:1px solid var(--line);
-    padding:28px 20px 24px;
-  }
-  header .wrap{max-width:680px;margin:0 auto;}
-  header h1{
-    font-family:Georgia,"Source Serif 4",serif;
-    font-size:28px;
-    font-weight:600;
-    margin:0 0 6px;
-    letter-spacing:-0.01em;
-  }
-  header p{
-    margin:0;
-    color:var(--muted);
-    font-size:15px;
-    max-width:52ch;
-  }
-  main{max-width:680px;margin:0 auto;padding:32px 20px 80px;}
-  section{margin-bottom:36px;}
-  section + section{
-    border-top:1px solid var(--line);
-    padding-top:32px;
-  }
-  h2{
-    font-family:Georgia,"Source Serif 4",serif;
-    font-size:19px;
-    font-weight:600;
-    margin:0 0 4px;
-  }
-  .section-note{
-    color:var(--muted);
-    font-size:13.5px;
-    margin:0 0 18px;
-  }
-  .field{margin-bottom:16px;}
-  label{
-    display:block;
-    font-size:13.5px;
-    font-weight:600;
-    margin-bottom:5px;
-  }
-  label .req{color:var(--warn);font-weight:600;}
-  label .hint{
-    display:block;
-    font-weight:400;
-    color:var(--muted);
-    font-size:12.5px;
-    margin-top:2px;
-  }
-  input[type=text],input[type=email],input[type=tel],textarea,select{
-    width:100%;
-    padding:9px 10px;
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    font-size:14.5px;
-    font-family:inherit;
-    background:var(--panel);
-    color:var(--ink);
-  }
-  textarea{resize:vertical;min-height:64px;}
-  input:focus,textarea:focus,select:focus{
-    outline:2px solid var(--teal);
-    outline-offset:1px;
-    border-color:var(--teal);
-  }
-  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-  @media (max-width:560px){.row2{grid-template-columns:1fr;}}
-  fieldset{border:none;padding:0;margin:0 0 16px;}
-  fieldset legend{
-    font-size:13.5px;
-    font-weight:600;
-    margin-bottom:6px;
-    padding:0;
-  }
-  .radio-row{display:flex;gap:18px;flex-wrap:wrap;}
-  .radio-opt{display:flex;align-items:center;gap:6px;font-size:14px;font-weight:400;}
-  .radio-opt input{width:auto;}
-
-  #summary-wrap{
-    display:none;
-    border-top:1px solid var(--line);
-    padding-top:28px;
-  }
-  #summary-wrap.show{display:block;}
-  #summary{
-    width:100%;
-    min-height:280px;
-    font-family:ui-monospace,"SF Mono",Consolas,monospace;
-    font-size:12.5px;
-    line-height:1.6;
-    white-space:pre;
-  }
-  .actions{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    margin-top:16px;
-  }
-  button{
-    font-family:inherit;
-    font-size:14.5px;
-    font-weight:600;
-    padding:11px 18px;
-    border-radius:var(--radius);
-    border:1px solid transparent;
-    cursor:pointer;
-  }
-  .btn-primary{
-    background:var(--teal);
-    color:#fff;
-  }
-  .btn-primary:hover{background:var(--teal-dark);}
-  .btn-secondary{
-    background:var(--panel);
-    color:var(--ink);
-    border-color:var(--line);
-  }
-  .btn-secondary:hover{border-color:var(--teal);}
-  .status{
-    font-size:13px;
-    color:var(--teal-dark);
-    margin-top:10px;
-    display:none;
-  }
-  .status.show{display:block;}
-  .missing{
-    display:none;
-    background:#fbf1ea;
-    border:1px solid #e2b791;
-    color:var(--warn);
-    padding:12px 14px;
-    border-radius:var(--radius);
-    font-size:13.5px;
-    margin-bottom:20px;
-  }
-  .missing.show{display:block;}
-  .missing ul{margin:6px 0 0;padding-left:18px;}
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
 </head>
-<body>
-
-<header>
+<body class="site-page onboarding-page">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="shell nav-wrap">
+  <a href="/" class="brand" aria-label="AnsweredCall home"><img src="/assets/answeredcall-mark.png" alt="" width="34" height="34"><span>AnsweredCall</span></a>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Open navigation</span><span></span><span></span></button>
+  <nav class="site-nav" id="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/phone-intake/">After-Hours Receptionist</a><a href="/onboarding/">Customer setup</a><a class="nav-action" href="mailto:sales@answeredcall.us">Contact</a></nav>
+</div></header>
+<section class="setup-intro">
   <div class="wrap">
     <h1>Complete your setup</h1>
     <p>You've paid for AnsweredCall. This form gives us what we need to build your assistant and turn on call answering. It takes about ten minutes, and someone reviews it by hand before anything goes live.</p>
   </div>
-</header>
+</section>
 
-<main>
+<main id="main">
   <form id="onboard-form" novalidate>
 
     <div class="missing" id="missing-box">
@@ -266,7 +116,7 @@
         <span class="hint">e.g. name, address, callback number, description of the issue</span></label>
         <textarea name="caller_info" required></textarea></div>
 
-      <div class="field"><label>Preferred callback promise <span class="req">*</span></label>
+      <div class="field"><label>Your team’s callback timeframe <span class="req">*</span></label>
         <input type="text" name="callback_promise" required placeholder="e.g. within 15 minutes, or next business morning"></div>
 
       <div class="row2">
@@ -351,7 +201,7 @@
       <p class="section-note">Confirms you're ready for us to build and test against your live line.</p>
 
       <div class="row2">
-        <div class="field"><label>Setup fee and monthly amount agreed</label>
+        <div class="field"><label>Agreed pricing: $197/month — no setup fee</label>
           <input type="text" name="fee_agreed"></div>
         <div class="field"><label>Payment received</label>
           <input type="text" name="payment_received" placeholder="date / method"></div>
@@ -421,6 +271,8 @@
   </div>
 </main>
 
+<footer class="site-footer"><div class="shell footer-grid"><div class="footer-brand"><a href="/" class="brand"><img src="/assets/answeredcall-mark.png" alt="" width="32" height="32"><span>AnsweredCall</span></a><p>Missed-call lead intake for service businesses.</p></div><div class="footer-links"><a href="/">AnsweredCall home</a><a href="/phone-intake/">After-Hours Receptionist</a><a href="/onboarding/">Customer setup</a><a href="mailto:sales@answeredcall.us">Contact</a></div><div class="footer-links"><a href="/privacy-policy/">Privacy</a><a href="/terms/">Terms</a></div><p class="footer-legal">© 2026 Nathan Bentley. All rights reserved.</p></div></footer>
+<script src="/script.js"></script>
 <script>
 const form = document.getElementById('onboard-form');
 const summaryWrap = document.getElementById('summary-wrap');
@@ -442,7 +294,7 @@ const FIELD_LABELS = {
   after_hours:'After-hours policy', emergency_instructions:'Emergency and safety instructions',
   transfer_situations:'Situations requiring immediate transfer', transfer_dest:'Transfer destination',
   transfer_backup:'Backup transfer destination', caller_info:'Information to collect from every caller',
-  callback_promise:'Preferred callback promise', languages:'Languages supported',
+  callback_promise:'Your team’s callback timeframe', languages:'Languages supported',
   pricing_ok:'Pricing statements the assistant may make', pricing_avoid:'Pricing statements the assistant must avoid',
   assistant_name:'Approved assistant name', voice_tone:'Preferred voice or tone', greeting:'Approved opening greeting',
   disclosure_required:'Recording disclosure required', disclosure_text:'Exact approved recording disclosure',
@@ -450,7 +302,7 @@ const FIELD_LABELS = {
   discord_owner:'Discord workspace and channel owner', lead_recipients:'Lead alert recipients',
   failure_recipients:'Failure alert recipients', escalation_order:'Escalation order for urgent leads',
   quiet_hours:'Quiet hours', partial_owner:'Owner of PARTIAL_NEEDS_REVIEW follow-up',
-  fee_agreed:'Setup fee and monthly amount agreed', payment_received:'Payment received',
+  fee_agreed:'Agreed pricing: $197/month — no setup fee', payment_received:'Payment received',
   test_window:'Customer-approved test window', test_contact:'Customer contact during forwarding test',
   approve_greeting:'Approves greeting and call-handling rules', approve_activation:'Approves production activation',
   launch_date:'Preferred launch date', review_7day:'7-day review date', review_30day:'30-day review date'

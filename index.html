@@ -3,223 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="AnsweredCall answers every contractor call, qualifies every lead, and delivers the full intake instantly." />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="AnsweredCall | Contractor Call Lead Capture" />
-<meta property="og:description" content="Every call answered. Every lead captured. Built for contractors who can't afford a missed call." />
-<meta property="og:url" content="https://answeredcall.us" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="AnsweredCall | Contractor Call Lead Capture" />
-<meta name="twitter:description" content="Every call answered. Every lead captured. Built for contractors who can't afford a missed call." />
-<title>AnsweredCall | Contractor Call Lead Capture</title>
+<meta name="description" content="AnsweredCall helps service businesses handle calls they cannot answer, collect structured lead information, identify urgency, and route leads into the right workflow.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AnsweredCall | Missed-Call Lead Intake for Service Businesses">
+<meta property="og:description" content="Capture more of the calls you can't answer, collect lead details, and route them into your workflow.">
+<meta property="og:url" content="https://answeredcall.us/">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://answeredcall.us/">
+<title>AnsweredCall | Missed-Call Lead Intake for Service Businesses</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --white: #faf6ef;
-    --off-white: #f3ecdd;
-    --light: #f5f1e8;
-    --border: #e3d5b8;
-    --border-dark: #d4c4b0;
-    --teal: #2d5a6f;
-    --teal-light: #3d7a8f;
-    --teal-dark: #1f3f52;
-    --cream: #f5f1e8;
-    --cream-dark: #e3d5b8;
-    --black: #0a0a0a;
-    --text-dark: #221b12;
-    --text-secondary: #6b5f4d;
-    --text-muted: #999999;
-  }
-
-  html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--text-dark); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-
-  /* NAV */
-  nav {
-    position: sticky; top: 0; z-index: 100;
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    padding: 0 2rem; height: 60px;
-    display: flex; align-items: center; justify-content: space-between;
-  }
-
-  .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .nav-logo { width: 40px; height: 40px; flex-shrink: 0; }
-  .nav-logo img { width: 100%; height: 100%; display: block; object-fit: contain; }
-  .nav-brand-name { font-weight: 600; font-size: 17px; color: var(--text-dark); letter-spacing: -0.3px; }
-
-  .nav-right { display: flex; align-items: center; gap: 1.25rem; }
-  .nav-link { font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: color 0.15s; white-space: nowrap; }
-  .nav-link:hover { color: var(--teal); }
-  .nav-cta { background: var(--teal); color: white; text-decoration: none; font-size: 14px; font-weight: 600; padding: 8px 18px; border-radius: 6px; transition: background 0.15s; white-space: nowrap; }
-  .nav-cta:hover { background: var(--teal-dark); }
-
-  /* HERO */
-  .hero { padding: 6rem 2rem 4rem; text-align: center; position: relative; overflow: hidden; background: var(--white); }
-  .hero::before { content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 700px; height: 500px; background: radial-gradient(circle, rgba(45,90,111,0.04) 0%, transparent 70%); pointer-events: none; }
-  .hero-inner { max-width: 720px; margin: 0 auto; position: relative; }
-
-  .hero-eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; gap: 8px; }
-  .hero-eyebrow::before { content: ''; display: inline-block; width: 16px; height: 1px; background: var(--teal); }
-
-  h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(42px, 6vw, 72px); line-height: 1; letter-spacing: 0.5px; color: var(--text-dark); margin-bottom: 1.5rem; }
-
-  .hero-sub { font-size: 17px; font-weight: 300; color: var(--text-secondary); line-height: 1.7; max-width: 600px; margin: 0 auto 3rem; }
-
-  /* PRODUCTS */
-  .products { padding: 0 2rem 5rem; background: var(--white); }
-  .products-inner { max-width: 480px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
-
-  .product-card { display: block; text-decoration: none; background: var(--off-white); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem 2rem; position: relative; overflow: hidden; transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s; }
-  .product-card:hover { transform: translateY(-2px); border-color: var(--teal); box-shadow: 0 8px 24px rgba(45, 90, 111, 0.08); }
-  .product-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--teal); }
-  .product-card-cream::before { background: var(--teal); }
-
-  .card-badge { display: inline-block; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; }
-  .product-card-cream .card-badge { color: var(--teal); }
-
-  .product-card h2 { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--text-dark); margin-bottom: 0.75rem; line-height: 1; letter-spacing: 0.5px; }
-  .product-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.65; font-weight: 300; margin-bottom: 1.75rem; }
-
-  .card-cta { font-size: 14px; font-weight: 500; color: var(--teal); }
-  .product-card-cream .card-cta { color: var(--teal); }
-
-  /* TRUST STRIP */
-  .trust-strip { background: var(--off-white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1.75rem 2rem; }
-  .trust-strip-inner { max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2rem; }
-  .trust-item { display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--text-secondary); }
-  .trust-check { width: 14px; height: 14px; background: rgba(45,90,111,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .trust-check::after { content: '✓'; font-size: 9px; color: var(--teal); font-weight: 700; }
-
-  /* DEMO / CONTACT */
-  .demo-section { padding: 5rem 2rem; text-align: center; background: var(--off-white); border-top: 1px solid var(--border); }
-  .demo-inner { max-width: 520px; margin: 0 auto; }
-  .demo-eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; gap: 8px; }
-  .demo-eyebrow::before { content: ''; display: inline-block; width: 16px; height: 1px; background: var(--teal); }
-  .demo-headline { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 44px); color: var(--text-dark); line-height: 1.05; margin-bottom: 1rem; }
-  .demo-copy { font-size: 15px; color: var(--text-secondary); line-height: 1.7; font-weight: 300; margin-bottom: 2rem; }
-  .choose-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
-  .btn-choose { display: inline-block; text-decoration: none; font-size: 15px; font-weight: 600; padding: 13px 24px; border-radius: 8px; transition: all 0.15s; }
-  .btn-choose-teal { background: var(--teal); color: white; }
-  .btn-choose-teal:hover { background: var(--teal-dark); transform: translateY(-1px); }
-  .btn-choose-cream { background: var(--teal); color: white; }
-  .btn-choose-cream:hover { background: var(--teal-dark); transform: translateY(-1px); }
-  .contact-line { font-size: 13px; color: var(--text-secondary); }
-  .contact-line a { color: var(--teal); text-decoration: none; }
-  .contact-line a:hover { text-decoration: underline; }
-
-  /* FOOTER */
-  footer { background: var(--off-white); border-top: 1px solid var(--border); padding: 2rem; }
-  .footer-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-  .footer-brand { font-weight: 600; font-size: 15px; color: var(--text-dark); }
-  .footer-links { display: flex; gap: 1.5rem; }
-  .footer-links a { font-size: 13px; color: var(--text-secondary); text-decoration: none; transition: color 0.15s; }
-  .footer-links a:hover { color: var(--teal); }
-  .footer-copy { font-size: 12px; color: var(--text-muted); width: 100%; }
-
-  /* RESPONSIVE */
-  @media (max-width: 640px) {
-    nav { padding: 0 1rem; }
-    .nav-link { display: none; }
-    .hero { padding: 4rem 1rem 3rem; }
-    .products { padding: 0 1rem 3rem; }
-    .products-inner { grid-template-columns: 1fr; }
-    .trust-strip { padding: 1.5rem 1rem; }
-    .trust-strip-inner { gap: 1.25rem; justify-content: flex-start; }
-    .demo-section { padding: 3.5rem 1rem; }
-    .footer-inner { flex-direction: column; align-items: flex-start; }
-    .footer-copy { text-align: left; }
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 </head>
-<body>
-
-<a class="skip-link" href="#main" style="position:absolute;left:-9999px;top:0;background:var(--teal);color:white;padding:8px 16px;z-index:9999;border-radius:0 0 6px 0;font-size:14px;">Skip to content</a>
-
-<nav>
-  <a href="/" class="nav-brand">
-    <div class="nav-logo">
-      <img src="/assets/answeredcall-mark.png" alt="" width="40" height="40">
-    </div>
-    <span class="nav-brand-name">AnsweredCall</span>
-  </a>
-  <div class="nav-right">
-    <a href="/phone-intake/" class="nav-link">24/7 Receptionist</a>
-    <a href="/onboarding/" class="nav-link">Already paid?</a>
-    <a href="/phone-intake/" class="nav-cta">Call Demo</a>
-  </div>
-</nav>
-
+<body class="home-page">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="shell nav-wrap">
+  <a href="/" class="brand" aria-label="AnsweredCall home"><img src="/assets/answeredcall-mark.png" alt="" width="34" height="34"><span>AnsweredCall</span></a>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Open navigation</span><span></span><span></span></button>
+  <nav class="site-nav" id="site-nav" aria-label="Primary navigation"><a href="#how-it-works">How it works</a><a href="#what-you-get">What you get</a><a href="#fit">Who it's for</a><a href="#faq">FAQ</a><a class="nav-action" href="/phone-intake/#demo-form-section">Call the live demo</a></nav>
+</div></header>
 <main id="main">
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-inner">
-    <p class="hero-eyebrow">AnsweredCall</p>
-    <h1>Turn missed contractor calls into organized lead records.</h1>
-    <p class="hero-sub">AI phone intake that answers every call, qualifies the lead, and delivers the details before the job slips away.</p>
-  </div>
-</section>
-
-<!-- PRODUCTS -->
-<div class="products">
-  <div class="products-inner">
-    <a href="/phone-intake/" class="product-card product-card-cream">
-      <span class="card-badge">Live call intake</span>
-      <h2>24/7 Receptionist</h2>
-      <p>For contractors who want incoming calls answered, qualified, summarized, and delivered for faster follow-up.</p>
-      <span class="card-cta">See 24/7 Receptionist →</span>
-    </a>
-  </div>
-</div>
-
-<!-- TRUST STRIP -->
-<div class="trust-strip">
-  <div class="trust-strip-inner">
-    <div class="trust-item"><div class="trust-check"></div> Built for contractors who miss calls while on jobs</div>
-    <div class="trust-item"><div class="trust-check"></div> Google Sheets delivery</div>
-    <div class="trust-item"><div class="trust-check"></div> Fast setup</div>
-    <div class="trust-item"><div class="trust-check"></div> No long-term contract</div>
-  </div>
-</div>
-
-<!-- CHOOSE SECTION -->
-<section class="demo-section" id="choose">
-  <div class="demo-inner">
-    <p class="demo-eyebrow">Get started</p>
-    <h2 class="demo-headline">Ready to stop missing calls?</h2>
-    <p class="demo-copy">See how 24/7 Receptionist answers, qualifies, and delivers every call, then call the live demo yourself.</p>
-    <div class="choose-buttons">
-      <a href="/phone-intake/" class="btn-choose btn-choose-teal">See 24/7 Receptionist</a>
-    </div>
-    <p class="contact-line">Already a customer? <a href="/onboarding/">Complete your setup →</a></p>
-    <p class="contact-line">Questions? Email <a href="mailto:sales@answeredcall.us">sales@answeredcall.us</a></p>
-  </div>
-</section>
-
+<section class="hero section-grid"><div class="shell hero-grid">
+  <div class="hero-copy"><p class="eyebrow"><span>01</span> Missed-call response</p><h1>Never let a missed call become a missed job.</h1><p class="hero-lede">When you can't answer, calls can enter the AnsweredCall intake flow. It collects lead details, identifies urgency, and routes the result into your workflow.</p><div class="hero-actions"><a class="button button-primary" href="#how-it-works">See how it works <span aria-hidden="true">↓</span></a><a class="text-action" href="/phone-intake/#demo-form-section">Walk through a missed call <span aria-hidden="true">↗</span></a></div><p class="hero-note">Built for service businesses where the phone rings while the work is already underway.</p></div>
+  <div class="signal-panel" aria-label="AnsweredCall missed-call workflow"><div class="signal-head"><span>CALL EVENT / 001</span><span class="live-status"><i></i> INTAKE READY</span></div><ol class="signal-flow"><li class="is-alert"><span class="signal-index">01</span><div><small>Incoming</small><strong>Missed call</strong></div><span class="signal-time">00:00</span></li><li><span class="signal-index">02</span><div><small>Response</small><strong>AI voice intake</strong></div><span class="signal-time">START</span></li><li><span class="signal-index">03</span><div><small>Intake</small><strong>Lead details + urgency</strong></div><span class="signal-time">LOG</span></li><li><span class="signal-index">04</span><div><small>Handoff</small><strong>Notification + record</strong></div><span class="signal-time">ROUTE</span></li></ol><div class="signal-foot"><span>NAME</span><span>PHONE</span><span>SERVICE</span><span>PRIORITY</span></div></div>
+</div></section>
+<section class="problem section-grid" aria-labelledby="problem-title"><div class="shell split-heading"><p class="eyebrow"><span>02</span> The gap</p><div><h2 id="problem-title">The lead can disappear before you know what they needed.</h2><p>You are on a job. A prospect calls. Nobody answers. The caller moves on—and there is no useful intake for your team to act on.</p></div></div><div class="shell loss-sequence" aria-label="How a missed call becomes a lost opportunity"><div><span>01</span><strong>Phone rings</strong><small>During a job or after hours</small></div><div><span>02</span><strong>No answer</strong><small>The work in front of you wins</small></div><div class="loss-alert"><span>03</span><strong>Caller moves on</strong><small>Context and opportunity disappear</small></div></div></section>
+<section class="process section-grid" id="how-it-works" aria-labelledby="process-title"><div class="shell split-heading"><p class="eyebrow"><span>03</span> How it works</p><div><h2 id="process-title">A clear path from unanswered call to actionable lead.</h2><p>Your missed-call rules, intake questions, and routing destinations are configured for the way your business operates.</p></div></div><div class="shell process-list">
+  <article><span class="process-number">01</span><div><h3>The missed call reaches AnsweredCall</h3><p>Missed-call forwarding sends the caller into the configured intake flow.</p></div><span class="process-code">CALL / IN</span></article>
+  <article><span class="process-number">02</span><div><h3>AI-assisted intake begins</h3><p>The caller is greeted for your business and guided through your approved questions.</p></div><span class="process-code">INTAKE / LIVE</span></article>
+  <article><span class="process-number">03</span><div><h3>The useful details are structured</h3><p>Name, callback number, address, requested service, issue, and urgency can be captured.</p></div><span class="process-code">LEAD / BUILD</span></article>
+  <article><span class="process-number">04</span><div><h3>The result goes where work happens</h3><p>Lead details can be delivered by SMS, email, or Google Sheets for your team to follow up.</p></div><span class="process-code">ROUTE / OUT</span></article>
+</div></section>
+<section class="deliverables section-grid" id="what-you-get" aria-labelledby="deliverables-title"><div class="shell deliverables-grid"><div class="deliverables-copy"><p class="eyebrow"><span>04</span> What you receive</p><h2 id="deliverables-title">Not another voicemail to decipher. A lead record your team can use.</h2><p>See who called, what they need, and what requires attention before you call back.</p><a class="text-action" href="/phone-intake/">Explore After-Hours Receptionist <span aria-hidden="true">→</span></a></div><div class="lead-record" aria-label="Example lead record fields"><div class="record-header"><span>LEAD RECORD</span><span class="priority">HIGH PRIORITY</span></div><dl><div><dt>Caller</dt><dd>Name + callback number</dd></div><div><dt>Location</dt><dd>Service address</dd></div><div><dt>Request</dt><dd>Service + issue summary</dd></div><div><dt>Urgency</dt><dd>Priority based on your rules</dd></div><div><dt>Record</dt><dd>Summary, transcript + recording</dd></div><div><dt>Delivery</dt><dd>SMS, email or Google Sheets</dd></div></dl></div></div></section>
+<section class="system-proof section-grid" aria-labelledby="proof-title"><div class="shell proof-head"><p class="eyebrow eyebrow-light"><span>05</span> Behind the scenes</p><h2 id="proof-title">A working intake system—not a message-taking gimmick.</h2><p>Each step has a job: collect, structure, route, and leave a record.</p></div><div class="shell system-map"><div class="system-node"><span>01 / VOICE</span><strong>Caller intake</strong><small>Approved greeting and questions</small></div><div class="system-connector"><i></i><span>WEBHOOK</span></div><div class="system-node"><span>02 / LOGIC</span><strong>Workflow routing</strong><small>Qualification and urgency rules</small></div><div class="system-connector"><i></i><span>DELIVERY</span></div><div class="system-node system-node-accent"><span>03 / OUTPUT</span><strong>Lead handoff</strong><small>Notification and structured record</small></div></div><div class="shell proof-meta"><span>Configurable intake</span><span>Urgency handling</span><span>Transcript + summary</span><span>Human-reviewed setup</span></div></section>
+<section class="fit section-grid" id="fit" aria-labelledby="fit-title"><div class="shell fit-grid"><div><p class="eyebrow"><span>06</span> Good fit</p><h2 id="fit-title">Built for businesses where a phone call can become real work.</h2><p class="fit-intro">The trade matters less than the operating reality.</p></div><ul class="fit-list"><li><span>01</span>Calls generate meaningful revenue</li><li><span>02</span>Your team cannot always stop to answer</li><li><span>03</span>Intake questions are repeatable</li><li><span>04</span>Urgent jobs need to stand out</li><li><span>05</span>Leads must reach the right person</li><li><span>06</span>Follow-up is currently inconsistent</li></ul></div><div class="shell fit-examples"><span>HVAC</span><span>PLUMBING</span><span>ELECTRICAL</span><span>ROOFING</span><span>WATERPROOFING</span><span>LANDSCAPING</span><span>REPAIR SERVICES</span></div></section>
+<section class="onboarding section-grid" aria-labelledby="onboarding-title"><div class="shell split-heading"><p class="eyebrow"><span>07</span> What happens next</p><div><h2 id="onboarding-title">Configured around your business. Tested before it goes live.</h2><p>Setup is reviewed by a person. Your greeting, handling rules, transfers, and lead delivery are confirmed before activation.</p></div></div><ol class="shell launch-line"><li><span>01</span><strong>Define the rules</strong><small>Services, hours, questions, urgency, transfers</small></li><li><span>02</span><strong>Build the intake</strong><small>Greeting and call handling configured</small></li><li><span>03</span><strong>Test the line</strong><small>Run calls and confirm the handoff</small></li><li><span>04</span><strong>Activate</strong><small>Forward missed calls after acceptance</small></li></ol><div class="shell onboarding-link"><a class="text-action" href="/onboarding/">Already paid? Complete your setup <span aria-hidden="true">→</span></a></div></section>
+<section class="faq section-grid" id="faq" aria-labelledby="faq-title"><div class="shell faq-grid"><div><p class="eyebrow"><span>08</span> FAQ</p><h2 id="faq-title">The practical questions.</h2></div><div class="faq-list"><details><summary>What happens when I answer the call?</summary><p>AnsweredCall is configured around missed-call forwarding. When you answer normally, the call stays with you.</p></details><details><summary>What information can it collect?</summary><p>Your setup defines the questions. The current intake supports details such as name, callback number, address, requested service, issue description, and urgency.</p></details><details><summary>How do I receive the lead?</summary><p>Lead details can be delivered by SMS, email, or Google Sheets, depending on the setup you choose.</p></details><details><summary>Does it replace my business number?</summary><p>No. Setup uses missed-call forwarding from your main business phone to the AnsweredCall number assigned to your intake.</p></details><details><summary>Can I test it before activation?</summary><p>Yes. Onboarding includes a test-call window and acceptance checks for the greeting, transfers, emergency handling, and lead delivery.</p></details></div></div></section>
+<section class="final-cta section-grid"><div class="shell final-grid"><p class="eyebrow"><span>09</span> Hear it work</p><div><h2>Find out what happens to your next missed call.</h2><p>Call the live demo, act like a customer, and hear the intake for yourself.</p></div><a class="button button-primary" href="/phone-intake/#demo-form-section">Call the live demo <span aria-hidden="true">↗</span></a></div></section>
 </main>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <span class="footer-brand">AnsweredCall</span>
-    <div class="footer-links">
-      <a href="/phone-intake/">24/7 Receptionist</a>
-      <a href="/onboarding/">Already paid? Complete your setup</a>
-      <a href="/privacy-policy/">Privacy Policy</a>
-      <a href="/terms/">Terms</a>
-    </div>
-    <span class="footer-copy">© 2026 Nathan Bentley &nbsp;·&nbsp; https://answeredcall.us</span>
-  </div>
-</footer>
-
-<script src="script.js"></script>
+<footer class="site-footer"><div class="shell footer-grid"><div class="footer-brand"><a href="/" class="brand"><img src="/assets/answeredcall-mark.png" alt="" width="32" height="32"><span>AnsweredCall</span></a><p>Missed-call lead intake for service businesses.</p></div><div class="footer-links"><a href="/phone-intake/">After-Hours Receptionist</a><a href="/onboarding/">Customer setup</a><a href="mailto:sales@answeredcall.us">Contact</a></div><div class="footer-links"><a href="/privacy-policy/">Privacy</a><a href="/terms/">Terms</a></div><p class="footer-legal">© 2026 Nathan Bentley. All rights reserved.</p></div></footer>
+<script src="/script.js"></script>
 </body>
 </html>
